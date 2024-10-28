@@ -4,7 +4,7 @@
 var KTProjectList = function () {    
     var initChart = function () {
         // Get all elements with the class 'kt_project_list_chart'
-        var elements = document.getElementsByClassName("kt_project_list_chart");
+        var elements = document.getElementsByClassName("no_data_chart");
 
         if (elements.length === 0) {
             return;
