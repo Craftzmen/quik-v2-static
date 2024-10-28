@@ -1,9 +1,9 @@
 "use strict";
 
 // Class definition
-var LiveOrdersBarChart = function () {
-    var initChart = function () {
-        var elements = document.getElementsByClassName("live_orders_bar_chart");
+var LiveOrdersWeekChart = function () {
+    var initLiveOrdersWeekChart = function () {
+        var elements = document.getElementsByClassName("live_orders_week_chart");
 
         if (elements.length === 0) {
             return;
@@ -12,16 +12,26 @@ var LiveOrdersBarChart = function () {
         var isMobile = window.innerWidth < 768; // Adjust the breakpoint as necessary
         var borderRadiusValue = isMobile ? 5 : 10; // 5 for mobile, 10 for desktop
 
-        // Generate labels for a 31-day month
-        var labels = Array.from({ length: 31 }, (_, i) => `July ${i + 1}`);
+        // Generate labels for the past 7 days
+        function getLast7Days() {
+            const labels = [];
+            const today = new Date();
+            for (let i = 6; i >= 0; i--) {
+                const day = new Date(today);
+                day.setDate(today.getDate() - i);
+                labels.push(day.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
+            }
+            return labels;
+        }
 
-        // Generate random data for 31 days
+        // Generate random data for the past 7 days
         function generateRandomData(numDays) {
             return Array.from({ length: numDays }, () => Math.floor(Math.random() * 50) + 10);
         }
 
-        var dataset1Data = generateRandomData(31); // First set of random data
-        var dataset2Data = generateRandomData(31); // Second set of random data
+        var labels = getLast7Days(); // Use dynamic labels for the last 7 days
+        var dataset1Data = generateRandomData(7); // First set of random data for 7 days
+        var dataset2Data = generateRandomData(7); // Second set of random data for 7 days
 
         Array.from(elements).forEach(function(element) {
             // Destroy any existing chart instance linked to this element
@@ -32,7 +42,7 @@ var LiveOrdersBarChart = function () {
             var config = {
                 type: 'bar',
                 data: {
-                    labels: labels, // Use 31-day labels
+                    labels: labels, // Use 7-day labels
                     datasets: [{
                         label: 'Dataset 1',
                         data: dataset1Data, // Dynamic data for Dataset 1
@@ -52,7 +62,7 @@ var LiveOrdersBarChart = function () {
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: true, // Maintain aspect ratio to help control height
+                    maintainAspectRatio: true, // Maintain the aspect ratio to prevent height issues
                     scales: {
                         x: {
                             stacked: true,
@@ -100,12 +110,12 @@ var LiveOrdersBarChart = function () {
     // Public methods
     return {
         init: function () {
-            initChart();
+            initLiveOrdersWeekChart();
         }
     }
 }();
 
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
-    LiveOrdersBarChart.init();
+    LiveOrdersWeekChart.init();
 });
