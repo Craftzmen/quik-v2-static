@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var LiveOrdersBarChart = function () {    
+var PayoutsPaidBarChart = function () {    
     var initChart = function () {
         // Get all elements with the class 'live_orders_bar_chart'
         var elements = document.getElementsByClassName("payouts_paid_bar_chart");
@@ -95,5 +95,5 @@ var LiveOrdersBarChart = function () {
 
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
-    LiveOrdersBarChart.init();
+    PayoutsPaidBarChart.init();
 });
