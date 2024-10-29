@@ -95,7 +95,7 @@
                 <div class="col-md-8 rounded-3 bg-white p-5" >
                     <div class="d-flex flex-column gap-2 flex-lg-row justify-content-between" >
                         <div>
-                            <h1 class="fs-2" >Live Orders</h1>
+                            <h1 class="fs-2" >Average Order Size</h1>
                             <div class="text-gray-600" >Last updated: Oct 10 at 04:00 PM</div>
                         </div>
                         <div class="mt-5 d-flex d-lg-none align-items-center gap-2 border border-gray-200 p-3" >
@@ -268,15 +268,15 @@
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade" id="today_tab" role="tabpanel">
                                             <h1 class="text-white" >This Week Tab</h1>
-                                            <canvas width="100%" height="55" class="live_orders_today_chart d-block border-box w-100 h-100"></canvas>
+                                            <canvas width="100%" height="55" class="average_order_size_today_chart d-block border-box w-100 h-100"></canvas>
                                         </div>
                                         <div class="tab-pane fade" id="this_week_tab" role="tabpanel">
                                             <h1 class="text-white" >This Week Tab</h1>
-                                            <canvas width="100%" height="55" class="live_orders_week_chart d-block border-box w-100 h-100"></canvas>
+                                            <canvas width="100%" height="55" class="average_order_size_week_chart d-block border-box w-100 h-100"></canvas>
                                         </div>
                                         <div class="tab-pane fade active show" id="this_month_tab" role="tabpanel">
                                             <h1 class="text-white" >This Month Tab</h1>
-                                            <canvas width="100%" height="55" class="live_orders_bar_chart d-block border-box w-100 h-100"></canvas>
+                                            <canvas width="100%" height="55" class="average_orders_size_bar_chart d-block border-box w-100 h-100"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -340,7 +340,7 @@
                     </div>
                     <div class="nav nav-tabs nav-line-tabs mt-lg-5 d-flex flex-column gap-5" >
                         <a class="text-black" href="./dashboard-data.html">
-                            <div class="bg-light-primary border border-primary d-flex align-items-center rounded-3 p-7" >
+                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-7" >
                                 <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-4 w-100" >
                                 <div class="d-lg-none" >
                                         <h2 class="text-start" >Live Orders</h2>
@@ -410,7 +410,7 @@
                             </div>
                         </a>
                         <a class="text-black" href="./dashboard-average-order-size.html">
-                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-7" >
+                            <div class="bg-light-signal border border-signal d-flex align-items-center rounded-3 p-7" >
                                 <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-4 w-100" >
                                 <div class="d-lg-none" >
                                         <h2>Average Order Size</h2>
@@ -486,10 +486,15 @@
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 
+    <script src="./assets/charts/average-order-size-today-chart.js" ></script>
+    <script src="./assets/charts/average-order-size-week-chart.js" ></script>
+    <script src="./assets/charts/average-order-size-bar-chart.js" ></script>
+    <script src="./assets/charts/delayed-orders-today-chart.js" ></script>
     <script src="./assets/charts/live-orders-today-chart.js" ></script>
     <script src="./assets/charts/live-orders-week-chart.js" ></script>
 
-    <script src="./assets/charts/live-orders-bar-chart.js" ></script>
+    <script src="./assets/charts/delayed-orders-week-chart.js" ></script>
+    <script src="./assets/charts/delayed-orders-bar-chart.js" ></script>
     <script src="./assets/charts/delayed-orders-chart.js" ></script>
     <script src="./assets/charts/average-orders-size-chart.js" ></script>
     <script src="./assets/charts/live-orders-chart.js" ></script>
