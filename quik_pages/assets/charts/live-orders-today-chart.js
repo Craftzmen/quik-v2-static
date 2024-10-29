@@ -69,9 +69,7 @@ var LiveOrdersTodayChart = function () {
                         y: {
                             stacked: true,
                             grid: {
-                                borderColor: '#EFF2F5',
-                                borderDash: [5, 5],
-                                drawBorder: false,
+                                display: false, // Hide horizontal grid lines
                             },
                             ticks: {
                                 padding: 20,
