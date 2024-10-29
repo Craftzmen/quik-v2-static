@@ -68,11 +68,6 @@ var LiveOrdersBarChart = function () {
                         },
                         y: {
                             stacked: true,
-                            grid: {
-                                borderColor: '#EFF2F5',
-                                borderDash: [5, 5],
-                                drawBorder: false,
-                            },
                             ticks: {
                                 padding: 20,
                                 callback: function(value, index, values) {
