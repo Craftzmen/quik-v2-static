@@ -247,6 +247,22 @@ table > thead > tr:nth-child(2) > th {
   background: #B6953F;
 }
 
+.border-delayed {
+  border-color: #FFB5B5 !important;
+}
+
+.bg-light-delayed {
+  background: #faf1f1;
+}
+
+.border-signal {
+  border-color: #6aedc6 !important;
+}
+
+.bg-light-signal {
+  background: #f3fcf9;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
