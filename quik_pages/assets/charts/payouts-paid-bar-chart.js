@@ -1,9 +1,9 @@
-="use strict";
+"use strict";
 
 // Class definition
 var PayoutsPaidBarChart = function () {
     var initPayoutsPaidBarChart = function () {
-        var elements = document.getElementsByClassName("live_orders_bar_chart");
+        var elements = document.getElementsByClassName("payouts_paid_bar_chart");
 
         if (elements.length === 0) {
             return;
@@ -36,14 +36,14 @@ var PayoutsPaidBarChart = function () {
                     datasets: [{
                         label: 'Dataset 1',
                         data: dataset1Data, // Dynamic data for Dataset 1
-                        backgroundColor: '#4FC9F3',
+                        backgroundColor: '#639787',
                         borderColor: '#EFF2F5',
                         borderSkipped: false,
                         borderDash: [5, 5],
                     }, {
                         label: 'Dataset 2',
                         data: dataset2Data, // Dynamic data for Dataset 2
-                        backgroundColor: '#1C3A6A',
+                        backgroundColor: '#8AEFD1',
                         borderColor: '#EFF2F5',
                         borderRadius: { topLeft: borderRadiusValue, topRight: borderRadiusValue },
                         borderSkipped: false,
@@ -69,7 +69,7 @@ var PayoutsPaidBarChart = function () {
                         y: {
                             stacked: true,
                             ticks: {
-                                padding: 20,
+                                padding: 0,
                                 callback: function(value, index, values) {
                                     if (index === values.length - 1) {
                                         this.options.grid.drawOnChartArea = false;

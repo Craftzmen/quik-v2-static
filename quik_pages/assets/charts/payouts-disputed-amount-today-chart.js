@@ -1,9 +1,9 @@
 "use strict";
 
 // Class definition
-var LiveOrdersTodayChart = function () {
-    var initLiveOrdersTodayChart = function () {
-        var elements = document.getElementsByClassName("live_orders_today_chart");
+var PayoutsDisputedAmountTodayChart = function () {
+    var initPayoutsDisputedAmountTodayChart = function () {
+        var elements = document.getElementsByClassName("payouts_disputed_amount_today_chart");
 
         if (elements.length === 0) {
             return;
@@ -69,7 +69,7 @@ var LiveOrdersTodayChart = function () {
                         y: {
                             stacked: true,
                             grid: {
-                                display: false, // Hide horizontal grid lines
+                               display: false,
                             },
                             ticks: {
                                 padding: 0,
@@ -92,12 +92,12 @@ var LiveOrdersTodayChart = function () {
     // Public methods
     return {
         init: function () {
-            initLiveOrdersTodayChart();
+            initPayoutsDisputedAmountTodayChart();
         }
     }
 }();
 
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
-    LiveOrdersTodayChart.init();
+    PayoutsDisputedAmountTodayChart.init();
 });

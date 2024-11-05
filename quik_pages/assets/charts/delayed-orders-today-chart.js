@@ -72,7 +72,7 @@ var DelayedOrdersTodayChart = function () {
                                display: false,
                             },
                             ticks: {
-                                padding: 20,
+                                padding: 0,
                             }
                         }
                     },
