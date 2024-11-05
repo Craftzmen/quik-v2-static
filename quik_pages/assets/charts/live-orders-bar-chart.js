@@ -69,7 +69,7 @@ var LiveOrdersBarChart = function () {
                         y: {
                             stacked: true,
                             ticks: {
-                                padding: 20,
+                                padding: 0,
                                 callback: function(value, index, values) {
                                     if (index === values.length - 1) {
                                         this.options.grid.drawOnChartArea = false;

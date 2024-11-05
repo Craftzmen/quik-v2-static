@@ -1,9 +1,9 @@
 "use strict";
 
 // Class definition
-var LiveOrdersTodayChart = function () {
-    var initLiveOrdersTodayChart = function () {
-        var elements = document.getElementsByClassName("live_orders_today_chart");
+var PayoutsDisputedAmountWeekChart = function () {
+    var initPayoutsDisputedAmountWeekChart = function () {
+        var elements = document.getElementsByClassName("payouts_disputed_amount_week_chart");
 
         if (elements.length === 0) {
             return;
@@ -12,16 +12,26 @@ var LiveOrdersTodayChart = function () {
         var isMobile = window.innerWidth < 768; // Adjust the breakpoint as necessary
         var borderRadiusValue = isMobile ? 5 : 10; // 5 for mobile, 10 for desktop
 
-        // Get today's date in the desired format
-        const todayLabel = new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" });
-
-        // Generate a single random data point for today
-        function generateTodayData() {
-            return Math.floor(Math.random() * 50) + 10;
+        // Generate labels for the past 7 days
+        function getLast7Days() {
+            const labels = [];
+            const today = new Date();
+            for (let i = 6; i >= 0; i--) {
+                const day = new Date(today);
+                day.setDate(today.getDate() - i);
+                labels.push(day.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
+            }
+            return labels;
         }
 
-        var todayData1 = generateTodayData(); // Random data for Dataset 1
-        var todayData2 = generateTodayData(); // Random data for Dataset 2
+        // Generate random data for the past 7 days
+        function generateRandomData(numDays) {
+            return Array.from({ length: numDays }, () => Math.floor(Math.random() * 50) + 10);
+        }
+
+        var labels = getLast7Days(); // Use dynamic labels for the last 7 days
+        var dataset1Data = generateRandomData(7); // First set of random data for 7 days
+        var dataset2Data = generateRandomData(7); // Second set of random data for 7 days
 
         Array.from(elements).forEach(function(element) {
             // Destroy any existing chart instance linked to this element
@@ -32,17 +42,17 @@ var LiveOrdersTodayChart = function () {
             var config = {
                 type: 'bar',
                 data: {
-                    labels: [todayLabel], // Only today's label
+                    labels: labels, // Use 7-day labels
                     datasets: [{
                         label: 'Dataset 1',
-                        data: [todayData1], // Data for Dataset 1
+                        data: dataset1Data, // Dynamic data for Dataset 1
                         backgroundColor: '#4FC9F3',
                         borderColor: '#EFF2F5',
                         borderSkipped: false,
                         borderDash: [5, 5],
                     }, {
                         label: 'Dataset 2',
-                        data: [todayData2], // Data for Dataset 2
+                        data: dataset2Data, // Dynamic data for Dataset 2
                         backgroundColor: '#1C3A6A',
                         borderColor: '#EFF2F5',
                         borderRadius: { topLeft: borderRadiusValue, topRight: borderRadiusValue },
@@ -52,7 +62,7 @@ var LiveOrdersTodayChart = function () {
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: true, // Maintain aspect ratio to prevent height issues
+                    maintainAspectRatio: true, // Maintain the aspect ratio to prevent height issues
                     scales: {
                         x: {
                             stacked: true,
@@ -69,10 +79,18 @@ var LiveOrdersTodayChart = function () {
                         y: {
                             stacked: true,
                             grid: {
-                                display: false, // Hide horizontal grid lines
+                                borderColor: '#EFF2F5',
+                                borderDash: [5, 5],
+                                drawBorder: false,
                             },
                             ticks: {
                                 padding: 0,
+                                callback: function(value, index, values) {
+                                    if (index === values.length - 1) {
+                                        this.options.grid.drawOnChartArea = false;
+                                    }
+                                    return value;
+                                }
                             }
                         }
                     },
@@ -92,12 +110,11 @@ var LiveOrdersTodayChart = function () {
     // Public methods
     return {
         init: function () {
-            initLiveOrdersTodayChart();
+            initPayoutsDisputedAmountWeekChart();
         }
     }
 }();
 
-// On document ready
 KTUtil.onDOMContentLoaded(function() {
-    LiveOrdersTodayChart.init();
+    PayoutsDisputedAmountWeekChart.init();
 });

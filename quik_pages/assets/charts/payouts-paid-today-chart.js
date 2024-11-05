@@ -1,9 +1,9 @@
 "use strict";
 
 // Class definition
-var LiveOrdersTodayChart = function () {
-    var initLiveOrdersTodayChart = function () {
-        var elements = document.getElementsByClassName("live_orders_today_chart");
+var PayoutsPaidTodayChart = function () {
+    var initPayoutsPaidTodayChart = function () {
+        var elements = document.getElementsByClassName("payouts_paid_today_chart");
 
         if (elements.length === 0) {
             return;
@@ -36,14 +36,14 @@ var LiveOrdersTodayChart = function () {
                     datasets: [{
                         label: 'Dataset 1',
                         data: [todayData1], // Data for Dataset 1
-                        backgroundColor: '#4FC9F3',
+                        backgroundColor: '#639787',
                         borderColor: '#EFF2F5',
                         borderSkipped: false,
                         borderDash: [5, 5],
                     }, {
                         label: 'Dataset 2',
                         data: [todayData2], // Data for Dataset 2
-                        backgroundColor: '#1C3A6A',
+                        backgroundColor: '#8AEFD1',
                         borderColor: '#EFF2F5',
                         borderRadius: { topLeft: borderRadiusValue, topRight: borderRadiusValue },
                         borderSkipped: false,
@@ -69,7 +69,7 @@ var LiveOrdersTodayChart = function () {
                         y: {
                             stacked: true,
                             grid: {
-                                display: false, // Hide horizontal grid lines
+                               display: false,
                             },
                             ticks: {
                                 padding: 0,
@@ -92,12 +92,12 @@ var LiveOrdersTodayChart = function () {
     // Public methods
     return {
         init: function () {
-            initLiveOrdersTodayChart();
+            initPayoutsPaidTodayChart();
         }
     }
 }();
 
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
-    LiveOrdersTodayChart.init();
+    PayoutsPaidTodayChart.init();
 });
