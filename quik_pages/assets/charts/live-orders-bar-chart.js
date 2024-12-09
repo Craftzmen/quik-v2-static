@@ -52,6 +52,7 @@ var LiveOrdersBarChart = function () {
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: true,
                     scales: {
                         x: {
                             stacked: true,
