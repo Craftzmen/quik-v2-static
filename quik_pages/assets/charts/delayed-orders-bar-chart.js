@@ -52,8 +52,6 @@ var DelayedOrdersBarChart = function () {
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: true, // Maintain aspect ratio to help control height
-                    devicePixelRatio: window.devicePixelRatio || 1,
                     scales: {
                         x: {
                             stacked: true,
