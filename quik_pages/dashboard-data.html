@@ -126,13 +126,11 @@
                                 <div class="w-100 d-flex flex-column flex-lg-row gap-1 justify-content-lg-between">
                                     <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-7">Order Status</label>
                                     <select class="form-select form-select-outlined fs-7 py-2 w-lg-250px ms-auto">
-                                        <option value="1">Delivered</option>
-                                    </select>
-                                </div>
-                                <div class="w-100 d-flex flex-column flex-lg-row gap-1 justify-content-lg-between">
-                                    <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-7">Payment Method</label>
-                                    <select class="form-select form-select-outlined py-2 w-lg-250px ms-auto fs-7" >
-                                        <option value="1">Cash</option>
+                                        <option value="1">Select</option>
+                                        <option value="1">Pickup Awaiting</option>
+                                        <option value="1">Picked Up</option>
+                                        <option value="1">Reached Warehouse</option>
+                                        <option value="1">Delivery Attempt Tried</option>
                                     </select>
                                 </div>
                            </div>
@@ -314,13 +312,11 @@
                         <div class="w-100 d-flex gap-3 justify-content-between align-items-center">
                             <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-8 m-0">Order Status</label>
                             <select class="form-select form-select-outlined fs-8 px-4 py-2 mw-lg-300px ms-auto">
-                                <option value="1">Delivered</option>
-                            </select>
-                        </div>
-                        <div class="mt-4 w-100 d-flex gap-3 justify-content-between align-items-center">
-                            <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-8 m-0">Payment Method</label>
-                            <select class="form-select form-select-outlined fs-8 px-4 py-2 mw-lg-300px ms-auto">
-                                <option value="1">Cash</option>
+                                <option value="">Select</option>
+                                <option value="1">Pickup Awaiting</option>
+                                <option value="1">Picked Up</option>
+                                <option value="1">Reached Warehouse</option>
+                                <option value="1">Delivery Attempt Tried</option>
                             </select>
                         </div>
                         <div class="mt-4 w-100 d-flex gap-3 justify-content-between align-items-center" >
@@ -345,8 +341,8 @@
                             <div class="bg-light-primary border border-primary d-flex align-items-center rounded-3 p-5 p-lg-7" >
                                 <div class="d-flex align-items-center gap-4 w-100" >
                                     <div class="d-flex justify-content-center justify-content-lg-start" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-100px h-lg-100px">
-                                            <canvas width="200" height="200" class="live_orders_chart d-block border-box w-80px h-80px w-lg-100px h-lg-100px"></canvas>
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="live_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
                                             <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >140</h1>
                                         </div>
                                     </div>
@@ -378,8 +374,8 @@
                             <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
                                 <div class="d-flex align-items-center gap-4 w-100" >
                                     <div class="d-flex justify-content-center justify-content-lg-start" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-100px h-lg-100px">
-                                            <canvas width="200" height="200" class="delayed_orders_chart d-block border-box w-80px h-80px w-lg-100px h-lg-100px"></canvas>
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="delayed_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
                                             <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >50</h1>
                                         </div>
                                     </div>
@@ -411,9 +407,9 @@
                             <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
                                 <div class="d-flex align-items-center gap-4 w-100" >
                                     <div class="d-flex justify-content-center justify-content-lg-start" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-100px h-lg-100px">
-                                            <canvas width="200" height="200" class="average_orders_size_chart d-block border-box w-80px h-80px w-lg-100px h-lg-100px"></canvas>
-                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >10L</h1>
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="average_orders_size_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
+                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >150K</h1>
                                         </div>
                                     </div>
                                     <div class="w-100" >

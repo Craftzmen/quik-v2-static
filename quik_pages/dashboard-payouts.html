@@ -124,14 +124,12 @@
                         <div class="mt-3 d-lg-none" >
                             <div class="d-flex gap-5" >
                                 <div class="w-100 d-flex flex-column flex-lg-row gap-1 justify-content-lg-between">
-                                    <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-7">Payout Number</label>
+                                    <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-7">Payout Status</label>
                                     <select class="form-select form-select-outlined fs-7 py-2 w-lg-250px ms-auto">
-                                        <option value="1">Delivered</option>
+                                        <option value="1">Select</option>
+                                        <option value="1">Paid</option>
+                                        <option value="1">Unpaid</option>
                                     </select>
-                                </div>
-                                <div class="w-100 d-flex flex-column flex-lg-row gap-1 justify-content-lg-between">
-                                    <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-7">Amount</label>
-                                    <input type="text" class="form-control form-control-outlined py-2 fs-7" placeholder="Enter amount" >
                                 </div>
                             </div>
                             <div class="mt-4 w-100 d-flex flex-column flex-lg-row gap-1 justify-content-lg-between" >
@@ -186,32 +184,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 w-100" >
-                        <div class="d-lg-none d-flex align-items-center gap-2" >
-                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-lg-1 w-100" >
+                            <div class="border border-gray-200 rounded-2 px-5 pt-1 pb-2" >
                                 <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
                                     <div class="" >
                                         <div class="d-flex align-items-center gap-2" >
-                                            <div class="fw-bold fs-1" >62.00L</div>
-                                            <div class="bg-light-danger text-danger px-1 rounded-1" >
-                                                <i class="ki-duotone ki-arrow-down text-danger">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                                2.2%
-                                            </div>
-                                        </div>
-                                        <div class="fs-7 fw-bold text-gray-700 mt-3 mt-lg-0" >Total Paid</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-lg-1 w-100" >
-                                <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
-                                    <div class="" >
-                                        <div class="d-flex align-items-center gap-2" >
-                                            <div class="fw-bold fs-1" >10.00L</div>
+                                            <div class="fw-bold fs-1" >600.00L</div>
                                             <div class="bg-light-success text-success px-1 rounded-1" >
                                                 <i class="ki-duotone ki-arrow-up text-success">
                                                     <span class="path1"></span>
@@ -220,7 +197,62 @@
                                                 2.2%
                                             </div>
                                         </div>
+                                        <div class="fs-7 fw-bold text-gray-700" >Remaining Balance</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 w-100" >
+                        <div class="d-lg-none d-flex align-items-lg-center gap-2" >
+                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-4 pt-lg-1 w-100" >
+                                <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
+                                    <div class="" >
+                                        <div class="d-flex flex-column flex-lg-row-reverse align-items-start align-items-lg-center gap-2" >
+                                            <div class="bg-light-danger text-danger px-1 rounded-1" >
+                                                <i class="ki-duotone ki-arrow-down text-danger">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                                2.2%
+                                            </div>
+                                            <div class="fw-bold fs-1" >62.00L</div>
+                                        </div>
+                                        <div class="fs-7 fw-bold text-gray-700 mt-3 mt-lg-0" >Total Paid</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-4 pt-lg-1 w-100" >
+                                <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
+                                    <div class="" >
+                                        <div class="d-flex flex-column flex-lg-row-reverse align-items-start align-items-lg-center gap-2" >
+                                            <div class="bg-light-success text-success px-1 rounded-1" >
+                                                <i class="ki-duotone ki-arrow-up text-success">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                                2.2%
+                                            </div>
+                                            <div class="fw-bold fs-1" >10.00L</div>
+                                        </div>
                                         <div class="fs-7 fw-bold text-gray-700 mt-3 mt-lg-0" >Amount</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-4 pt-lg-1 w-100" >
+                                <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
+                                    <div class="" >
+                                        <div class="d-flex flex-column flex-lg-row-reverse align-items-start align-items-lg-center gap-2" >
+                                            <div class="bg-light-success text-success px-1 rounded-1" >
+                                                <i class="ki-duotone ki-arrow-up text-success">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                                2.2%
+                                            </div>
+                                            <div class="fw-bold fs-1" >600.00L</div>
+                                        </div>
+                                        <div class="fs-7 fw-bold text-gray-700 mt-3 mt-lg-0" >Remaining Balance</div>
                                     </div>
                                 </div>
                             </div>
@@ -310,14 +342,12 @@
                     </div>
                     <div class="d-none d-lg-block mt-4" >
                         <div class="w-100 d-flex gap-3 justify-content-between align-items-center">
-                            <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-8 m-0">Payout Number</label>
+                            <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-8 m-0">Payout Status</label>
                             <select class="form-select form-select-outlined fs-8 px-4 py-2 mw-lg-300px ms-auto">
                                 <option value="1">Select</option>
+                                <option value="1">Paid</option>
+                                <option value="1">Unpaid</option>
                             </select>
-                        </div>
-                        <div class="mt-4 w-100 d-flex gap-3 justify-content-between align-items-center">
-                            <label for="exampleFormControlInput1" class="form-label flex-shrink-0 fs-8 m-0">Amount</label>
-                           <input type="text" class="form-control form-control-outlined w-100 px-4 py-2 mw-lg-300px ms-auto fs-7" placeholder="Enter amount" >
                         </div>
                         <div class="mt-4 w-100 d-flex gap-3 justify-content-between align-items-center" >
                             <label for="" class="form-label flex-shrink-0 fs-8 m-0">Date Range</label>
@@ -341,8 +371,8 @@
                             <div class="bg-light-success border border-success d-flex align-items-center rounded-3 p-5 p-lg-7" >
                                 <div class="d-flex align-items-center gap-4 w-100" >
                                     <div class="d-flex justify-content-center justify-content-lg-start" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-100px h-lg-100px">
-                                            <canvas width="200" height="200" class="payouts_paid_chart d-block border-box w-80px h-80px w-lg-100px h-lg-100px"></canvas>
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="payouts_paid_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
                                             <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >140</h1>
                                         </div>
                                     </div>
@@ -374,8 +404,8 @@
                             <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
                                 <div class="d-flex align-items-center gap-4 w-100" >
                                     <div class="d-flex justify-content-center justify-content-lg-start" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-100px h-lg-100px">
-                                            <canvas width="200" height="200" class="payouts_pending_chart d-block border-box w-80px h-80px w-lg-100px h-lg-100px"></canvas>
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="payouts_pending_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
                                             <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >50</h1>
                                         </div>
                                     </div>
@@ -407,8 +437,8 @@
                             <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
                                 <div class="d-flex align-items-center gap-4 w-100" >
                                     <div class="d-flex justify-content-center justify-content-lg-start" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-100px h-lg-100px">
-                                            <canvas width="200" height="200" class="live_orders_chart d-block border-box w-80px h-80px w-lg-100px h-lg-100px"></canvas>
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="live_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
                                             <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-lg-1 fw-black" >10L</h1>
                                         </div>
                                     </div>
