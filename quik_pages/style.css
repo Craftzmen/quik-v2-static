@@ -263,6 +263,14 @@ table > thead > tr:nth-child(2) > th {
   background: #f3fcf9;
 }
 
+.bg-delivered-primary {
+  background-color: #1fe070;
+}
+
+.bg-delivered-secondary {
+  background-color: #87f5b5;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
