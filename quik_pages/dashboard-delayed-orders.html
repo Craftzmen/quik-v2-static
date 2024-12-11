@@ -131,6 +131,7 @@
                                         <option value="1">Picked Up</option>
                                         <option value="1">Reached Warehouse</option>
                                         <option value="1">Delivery Attempt Tried</option>
+                                        <option value="1">Delivered</option>
                                     </select>
                                 </div>
                             </div>
@@ -317,6 +318,7 @@
                                 <option value="1">Picked Up</option>
                                 <option value="1">Reached Warehouse</option>
                                 <option value="1">Delivery Attempt Tried</option>
+                                <option value="1">Delivered</option>
                             </select>
                         </div>
                         <div class="mt-4 w-100 d-flex gap-3 justify-content-between align-items-center" >
@@ -436,6 +438,39 @@
                                 </div>
                             </div>
                         </a>
+                        <a class="text-black" href="./dashboard-delivered-orders.html">
+                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
+                                <div class="d-flex align-items-center gap-4 w-100" >
+                                    <div class="d-flex justify-content-center justify-content-lg-start" >
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="delivered_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
+                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >60</h1>
+                                        </div>
+                                    </div>
+                                    <div class="w-100" >
+                                        <h2 class="fw-bold fs-4 fs-lg-3" >Delivered Orders</h2>
+                                        <div class="w-100 h-1px bg-gray-300" ></div>
+                                        <div class="mt-4 mt-lg-2 rounded-2 w-100" >
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-delivered-primary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value < 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                            <div class="w-100 h-1px my-2" ></div>
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-delivered-secondary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value > 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -478,6 +513,7 @@
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 
+    <script src="./assets/charts/delivered-orders-chart.js" ></script>
     <script src="./assets/charts/delayed-orders-today-chart.js" ></script>
     <script src="./assets/charts/live-orders-today-chart.js" ></script>
     <script src="./assets/charts/live-orders-week-chart.js" ></script>

@@ -95,7 +95,7 @@
                 <div class="col-md-8 rounded-3 bg-white p-5" >
                     <div class="d-flex flex-column gap-2 flex-lg-row justify-content-between" >
                         <div>
-                            <h1 class="fs-2" >Live Orders</h1>
+                            <h1 class="fs-2" >Delivered Orders</h1>
                             <div class="text-gray-600" >Last updated: Oct 10 at 04:00 PM</div>
                         </div>
                         <div class="mt-5 d-flex d-lg-none align-items-center gap-2 border border-gray-200 p-3" >
@@ -157,13 +157,13 @@
                                 <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
                                     <div class="" >
                                         <div class="d-flex align-items-center gap-2" >
-                                            <div class="fw-bold fs-1" >0</div>
+                                            <div class="fw-bold fs-2" >62</div>
                                             <div class="bg-light-danger text-danger px-1 rounded-1" >
                                                 <i class="ki-duotone ki-arrow-down text-danger">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
-                                                0%
+                                                2.2%
                                             </div>
                                         </div>
                                         <div class="fs-7 fw-bold text-gray-700" >Order Created</div>
@@ -174,13 +174,13 @@
                                 <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
                                     <div class="" >
                                         <div class="d-flex align-items-center gap-2" >
-                                            <div class="fw-bold fs-1" >0</div>
+                                            <div class="fw-bold fs-2" >760</div>
                                             <div class="bg-light-success text-success px-1 rounded-1" >
                                                 <i class="ki-duotone ki-arrow-up text-success">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
-                                                0%
+                                                2.2%
                                             </div>
                                         </div>
                                         <div class="fs-7 fw-bold text-gray-700" >Orders Delivered</div>
@@ -191,35 +191,35 @@
                     </div>
                     <div class="mt-6 w-100" >
                         <div class="d-lg-none d-flex align-items-center gap-2" >
-                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-lg-1 w-100" >
+                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-4 pt-lg-1 w-100" >
                                 <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
                                     <div class="" >
-                                        <div class="d-flex align-items-center gap-2" >
-                                            <div class="fw-bold fs-1" >0</div>
+                                        <div class="d-flex flex-column flex-lg-row-reverse align-items-start align-items-lg-center gap-2" >
                                             <div class="bg-light-danger text-danger px-1 rounded-1" >
                                                 <i class="ki-duotone ki-arrow-down text-danger">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
-                                                0%
+                                                2.2%
                                             </div>
+                                            <div class="fw-bold fs-1" >62</div>
                                         </div>
                                         <div class="fs-7 fw-bold text-gray-700 mt-3 mt-lg-0" >Order Created</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-lg-1 w-100" >
+                            <div class="border border-gray-200 rounded-2 px-5 py-2 pt-4 pt-lg-1 w-100" >
                                 <div class="d-flex align-items-center w-full gap-lg-12 justify-content-between" >
                                     <div class="" >
-                                        <div class="d-flex align-items-center gap-2" >
-                                            <div class="fw-bold fs-1" >0</div>
+                                        <div class="d-flex flex-column flex-lg-row-reverse align-items-start align-items-lg-center gap-2" >
                                             <div class="bg-light-success text-success px-1 rounded-1" >
                                                 <i class="ki-duotone ki-arrow-up text-success">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
-                                                0%
+                                                2.2%
                                             </div>
+                                            <div class="fw-bold fs-1" >760</div>
                                         </div>
                                         <div class="fs-7 fw-bold text-gray-700 mt-3 mt-lg-0" >Orders Delivered</div>
                                     </div>
@@ -256,11 +256,30 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="mt-8 d-flex flex-column align-items-center justify-content-center" >
-                                <div class="fs-2 fw-bold" >You are all clear</div>
-                                <div class="text-gray-700" >No data to visualize</div>
-                                <div class="mt-8" >
+                            <div class="d-flex flex-column align-items-center justify-content-center" >
+                                <!-- <div class="fs-2 fw-bold" >You are all clear</div> -->
+                                <!-- <div class="text-gray-700" >No data to visualize</div> -->
+                                <!-- <div class="mt-8" >
                                     <img src="./assets/no-data.svg" alt="no-data" class="w-100" >
+                                </div> -->
+                                <!-- <div class="mt-8" >
+                                    <canvas width="100%" height="55" class="live_orders_bar_chart d-block border-box w-100 h-100"></canvas>
+                                </div> -->
+                                <div class="mt-8 w-100" >
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade" id="today_tab" role="tabpanel">
+                                            <h1 class="text-white fs-8" >Today Tab</h1>
+                                            <canvas width="100%" height="55" class="delivered_orders_today_chart d-block border-box w-100 h-100"></canvas>
+                                        </div>
+                                        <div class="tab-pane fade" id="this_week_tab" role="tabpanel">
+                                            <h1 class="text-white fs-8" >This Week Tab</h1>
+                                            <canvas width="100%" height="55" class="delivered_orders_week_chart d-block border-box w-100 h-100"></canvas>
+                                        </div>
+                                        <div class="tab-pane fade active show" id="this_month_tab" role="tabpanel">
+                                            <h1 class="text-white fs-8" >This Month Tab</h1>
+                                            <canvas width="100%" height="55" class="delivered_orders_bar_chart d-block border-box w-100 h-100"></canvas>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -319,65 +338,139 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex flex-column gap-5" >
-                       <div class="mt-lg-6 d-flex flex-column gap-5" >
-                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-7 p-lg-8" >
-                                <div class="d-flex gap-4 w-100" >
-                                    <div class="d-flex justify-content-center justify-content-lg-center" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-80px h-lg-80px">
-                                            <canvas width="200" height="200" class="no_data_chart d-block border-box w-80px h-80px w-lg-80px h-lg-80px"></canvas>
-                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >0</h1>
+                    <div class="nav nav-tabs nav-line-tabs mt-lg-5 d-flex flex-column gap-5" >
+                        <a class="text-black" href="./dashboard-data.html">
+                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
+                                <div class="d-flex align-items-center gap-4 w-100" >
+                                    <div class="d-flex justify-content-center justify-content-lg-start" >
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="live_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
+                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >140</h1>
                                         </div>
                                     </div>
-                                    <div class="" >
-                                        <h2 class="fw-bold fs-3" >Live Orders</h2>
-                                        <div class="bg-white rounded-3 px-5 py-3 d-inline-block text-gray-700 mt-5 mt-lg-2 fw-semibold text-center" >No data to show.</div>
+                                    <div class="w-100" >
+                                        <h2 class="fw-bold fs-4 fs-lg-3" >Live Orders</h2>
+                                        <div class="w-100 h-1px bg-gray-300" ></div>
+                                        <div class="mt-4 mt-lg-2 rounded-2 w-100" >
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-primary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value < 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                            <div class="w-100 h-1px my-2" ></div>
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-secondary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value > 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-7 p-lg-8" >
-                                <div class="d-flex gap-4 w-100" >
-                                    <div class="d-flex justify-content-center justify-content-lg-center" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-80px h-lg-80px">
-                                            <canvas width="200" height="200" class="no_data_chart d-block border-box w-80px h-80px w-lg-80px h-lg-80px"></canvas>
-                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >0</h1>
+                        </a>
+                        <a class="text-black" href="./dashboard-delayed-orders.html">
+                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
+                                <div class="d-flex align-items-center gap-4 w-100" >
+                                    <div class="d-flex justify-content-center justify-content-lg-start" >
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="delayed_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
+                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >50</h1>
                                         </div>
                                     </div>
-                                    <div class="" >
-                                        <h2 class="fw-bold fs-3" >Delayed Orders</h2>
-                                        <div class="bg-white rounded-3 px-5 py-3 d-inline-block text-gray-700 mt-5 mt-lg-2 fw-semibold text-center" >No data to show.</div>
+                                    <div class="w-100" >
+                                        <h2 class="fw-bold fs-4 fs-lg-3" >Delayed Orders</h2>
+                                        <div class="w-100 h-1px bg-gray-300" ></div>
+                                        <div class="mt-4 mt-lg-2 rounded-2 w-100" >
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-delayed-primary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value < 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                            <div class="w-100 h-1px my-2" ></div>
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-delayed-secondary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value > 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-7 p-lg-8" >
-                                <div class="d-flex gap-4 w-100" >
-                                    <div class="d-flex justify-content-center justify-content-lg-center" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-80px h-lg-80px">
-                                            <canvas width="200" height="200" class="no_data_chart d-block border-box w-80px h-80px w-lg-80px h-lg-80px"></canvas>
-                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >0</h1>
+                        </a>
+                        <a class="text-black" href="./dashboard-average-order-size.html">
+                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-5 p-lg-7" >
+                                <div class="d-flex align-items-center gap-4 w-100" >
+                                    <div class="d-flex justify-content-center justify-content-lg-start" >
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="average_orders_size_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
+                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >5500000</h1>
                                         </div>
                                     </div>
-                                    <div class="" >
-                                        <h2 class="fw-bold fs-3" >Average Order Size</h2>
-                                        <div class="bg-white rounded-3 px-5 py-3 d-inline-block text-gray-700 mt-5 mt-lg-2 fw-semibold text-center" >No data to show.</div>
+                                    <div class="w-100" >
+                                        <h2 class="fw-bold fs-4 fs-lg-3" >Average Order Size</h2>
+                                        <div class="w-100 h-1px bg-gray-300" ></div>
+                                        <div class="mt-4 mt-lg-2 rounded-2 w-100" >
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-average-primary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value < 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                            <div class="w-100 h-1px my-2" ></div>
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-average-secondary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value > 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-gray-100 d-flex align-items-center rounded-3 p-7 p-lg-8" >
-                                <div class="d-flex gap-4 w-100" >
-                                    <div class="d-flex justify-content-center justify-content-lg-center" >
-                                        <div class="position-relative d-flex mx-auto flex-center w-80px h-80px w-lg-80px h-lg-80px">
-                                            <canvas width="200" height="200" class="no_data_chart d-block border-box w-80px h-80px w-lg-80px h-lg-80px"></canvas>
-                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >0</h1>
+                        </a>
+                        <a class="text-black" href="./dashboard-delivered-orders.html">
+                            <div class="bg-light-success border border-success d-flex align-items-center rounded-3 p-5 p-lg-7" >
+                                <div class="d-flex align-items-center gap-4 w-100" >
+                                    <div class="d-flex justify-content-center justify-content-lg-start" >
+                                        <div class="position-relative d-flex mx-auto flex-center w-90px h-90px w-lg-100px h-lg-100px">
+                                            <canvas width="200" height="200" class="delivered_orders_chart d-block border-box w-90px h-90px w-lg-100px h-lg-100px"></canvas>
+                                            <h1 class="text-secondary position-absolute top-50 left-50 translate-middle-y fs-5 fw-black" >60</h1>
                                         </div>
                                     </div>
-                                    <div class="" >
-                                        <h2 class="fw-bold fs-3" >Delivered Orders</h2>
-                                        <div class="bg-white rounded-3 px-5 py-3 d-inline-block text-gray-700 mt-5 mt-lg-2 fw-semibold text-center" >No data to show.</div>
+                                    <div class="w-100" >
+                                        <h2 class="fw-bold fs-4 fs-lg-3" >Delivered Orders</h2>
+                                        <div class="w-100 h-1px bg-gray-300" ></div>
+                                        <div class="mt-4 mt-lg-2 rounded-2 w-100" >
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-delivered-primary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value < 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                            <div class="w-100 h-1px my-2" ></div>
+                                            <div class="d-flex align-items-center justify-content-between w-100" >
+                                                <div class="d-flex align-items-center gap-3" >
+                                                    <div class="w-10px h-10px bg-delivered-secondary rounded-circle" ></div>
+                                                    <div class="fw-semibold" >Value > 1000.00L</div>
+                                                </div>
+                                                <div class="text-gray-700" >35 Orders</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                       </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -420,6 +513,10 @@
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 
+    <script src="./assets/charts/delivered-orders-today-chart.js" ></script>
+    <script src="./assets/charts/delivered-orders-week-chart.js" ></script>
+    <script src="./assets/charts/delivered-orders-bar-chart.js" ></script>
+    <script src="./assets/charts/delivered-orders-chart.js" ></script>
     <script src="./assets/charts/live-orders-today-chart.js" ></script>
     <script src="./assets/charts/live-orders-week-chart.js" ></script>
 
@@ -432,8 +529,6 @@
     <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-    <script src="./assets/charts/empty-circle-chart.js" ></script>
 
     <script src="../theme/assets/plugins/global/plugins.bundle.js"></script>
     <script src="../theme/assets/js/scripts.bundle.js"></script>
