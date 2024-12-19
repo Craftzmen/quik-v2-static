@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Quik Logistics - Static | Pages</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Craft admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
+		<meta name="keywords" content="Craft, bootstrap, bootstrap 5, admin themes, dark mode, free admin themes, bootstrap admin, bootstrap dashboard" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Quik Logistics - Static | Pages" />
+		<meta property="og:url" content="https://themes.getbootstrap.com/product/craft-bootstrap-5-admin-dashboard-theme" />
+		<meta property="og:site_name" content="Craft by Keenthemes" />
+		<link rel="canonical" href="http://preview.keenthemes.comindex.html" />
+		<link rel="shortcut icon" href="../theme/assets/media/logos/favicon.ico" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+		<link href="../theme/assets/plugins/custom/leaflet/leaflet.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../theme/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../theme/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../theme/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="./navbar.css">
+	</head>
+<body class="bg-gray-100 min-h-100" >
+    <header>
+        <nav class="bg-white px-8 py-4 d-flex align-items-center justify-content-between" >
+            <div class="d-flex align-items-center gap-2 gap-lg-10" >
+                <i class="d-lg-none ki-duotone ki-abstract-14 fs-1"><span class="path1"></span><span class="path2"></span></i>
+                <div>
+                    <img class="w-80px h-25px " src="./assets/quik-logo-new.svg">
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-12" >
+                    <div class="d-flex" >
+                        <div>
+                            <div class="d-flex tabs">
+                                <a href="#dashbaord" class="tab">Dashboard</a>
+                                <a href="#users" class="tab">Users</a>
+                                <a href="#orders" class="tab active">Orders</a>
+                                <a href="#buyers" class="tab">Buyers</a>
+                                <button class="px-4 py-2 bg-white border-0 d-flex align-items-center" id="kt_header_user_menu_toggle" >
+                                    <div class="text-gray-600 fs-6 d-flex align-items-center gap-4 cursor-pointer" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
+                                        <span>Finance</span>
+                                        <img src="./assets/chevron-down.svg" width="12" height="12" >
+                                    </div>
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                                        <div class="menu-item px-5">
+                                            <a href="#" class="menu-link px-5">Transactions</a>
+                                        </div>
+                                        <div class="menu-item px-5">
+                                            <a href="#" class="menu-link px-5">Payouts</a>
+                                        </div>
+                                    </div>
+                                </button>
+                                <div class="tabsShadow"></div>
+                                <div class="glider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex align-items-center ms-2 ms-lg-3" id="kt_header_user_menu_toggle">
+                    <div class="cursor-pointer symbol symbol-35px symbol-lg-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                        <img alt="Pic" src="../theme/assets/media/avatars/300-1.jpg" />
+                    </div>
+                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                        <div class="menu-item px-3">
+                            <div class="menu-content d-flex align-items-center px-3">
+                                <div class="symbol symbol-50px me-5">
+                                    <img alt="Logo" src="../theme/assets/media/avatars/300-1.jpg" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fw-bold d-flex align-items-center fs-5">Max Smith</div>
+                                    <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator my-2"></div>
+                        <div class="menu-item px-5">
+                            <a href="#" class="menu-link px-5">Account Settings</a>
+                        </div>
+                        <div class="menu-item px-5">
+                            <a href="#" class="menu-link px-5">Sign Out</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="py-8 px-10 d-flex align-items-center justify-content-between" >
+            <h1 class="text-secondary fw-bold my-1 fs-2">Payouts</h1>
+            <div class="bg-white rounded-2 d-flex align-items-center border border-gray-200 ps-4" >
+                <i class="ki-duotone ki-magnifier fs-2">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+                <input type="text" placeholder="Search by number" class="form-control form-control-solid bg-white" >
+            </div>
+        </div>
+        <div class="mx-lg-10 pb-10 bg-white" >
+            
+        </div>
+       
+    </main>
+    
+    <script>
+        var datepicker = document.getElementById('kt_datepicker_1');
+        datepicker.flatpickr();
+    </script>
+
+    
+        <script src="./animations.js" ></script>
+
+		<script src="../theme/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../theme/assets/js/scripts.bundle.js"></script>
+		<script src="../theme/assets/plugins/custom/leaflet/leaflet.bundle.js"></script>
+		<script src="../theme/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<script src="../theme/assets/js/widgets.bundle.js"></script>
+		<script src="../theme/assets/js/custom/widgets.js"></script>
+		<script src="../theme/assets/js/custom/apps/chat/chat.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/type.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/budget.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/settings.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/team.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/targets.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/files.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/complete.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/main.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/select-location.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-app.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/users-search.js"></script>
+
+</body>
+</html>
