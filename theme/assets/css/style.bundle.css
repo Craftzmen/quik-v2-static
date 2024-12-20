@@ -7543,9 +7543,12 @@ fieldset:disabled .btn {
 .start-100 {
   left: 100% !important;
 }
-.end-0 {
+
+.dropdown-menu[data-bs-popper] {
   right: 0 !important;
+  left: unset !important;
 }
+
 .end-25 {
   right: 25% !important;
 }
