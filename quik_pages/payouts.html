@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Quik Logistics - Static | Pages</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Craft admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
+		<meta name="keywords" content="Craft, bootstrap, bootstrap 5, admin themes, dark mode, free admin themes, bootstrap admin, bootstrap dashboard" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Quik Logistics - Static | Pages" />
+		<meta property="og:url" content="https://themes.getbootstrap.com/product/craft-bootstrap-5-admin-dashboard-theme" />
+		<meta property="og:site_name" content="Craft by Keenthemes" />
+		<link rel="canonical" href="http://preview.keenthemes.comindex.html" />
+		<link rel="shortcut icon" href="../theme/assets/media/logos/favicon.ico" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+		<link href="../theme/assets/plugins/custom/leaflet/leaflet.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../theme/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../theme/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../theme/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="./navbar.css">
+	</head>
+<body class="bg-gray-100 min-h-100" >
+    <header>
+        <nav class="bg-white px-8 py-4 d-flex align-items-center justify-content-between" >
+            <div class="d-flex align-items-center gap-2 gap-lg-10" >
+                <i class="d-lg-none ki-duotone ki-abstract-14 fs-1"><span class="path1"></span><span class="path2"></span></i>
+                <div>
+                    <img class="w-80px h-25px " src="./assets/quik-logo-new.svg">
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-12" >
+                    <div class="d-flex" >
+                        <div>
+                            <div class="d-flex tabs">
+                                <a href="#dashbaord" class="tab">Dashboard</a>
+                                <a href="#users" class="tab">Users</a>
+                                <a href="#orders" class="tab active">Orders</a>
+                                <a href="#buyers" class="tab">Buyers</a>
+                                <button class="px-4 py-2 bg-white border-0 d-flex align-items-center" id="kt_header_user_menu_toggle" >
+                                    <div class="text-gray-600 fs-6 d-flex align-items-center gap-4 cursor-pointer" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-start">
+                                        <span>Finance</span>
+                                        <img src="./assets/chevron-down.svg" width="12" height="12" >
+                                    </div>
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                                        <div class="menu-item px-5">
+                                            <a href="#" class="menu-link px-5">Transactions</a>
+                                        </div>
+                                        <div class="menu-item px-5">
+                                            <a href="#" class="menu-link px-5">Payouts</a>
+                                        </div>
+                                    </div>
+                                </button>
+                                <div class="tabsShadow"></div>
+                                <div class="glider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex align-items-center ms-2 ms-lg-3" id="kt_header_user_menu_toggle">
+                    <div class="cursor-pointer symbol symbol-35px symbol-lg-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                        <img alt="Pic" src="../theme/assets/media/avatars/300-1.jpg" />
+                    </div>
+                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                        <div class="menu-item px-3">
+                            <div class="menu-content d-flex align-items-center px-3">
+                                <div class="symbol symbol-50px me-5">
+                                    <img alt="Logo" src="../theme/assets/media/avatars/300-1.jpg" />
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="fw-bold d-flex align-items-center fs-5">Max Smith</div>
+                                    <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator my-2"></div>
+                        <div class="menu-item px-5">
+                            <a href="#" class="menu-link px-5">Account Settings</a>
+                        </div>
+                        <div class="menu-item px-5">
+                            <a href="#" class="menu-link px-5">Sign Out</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="py-8 mx-5 mx-lg-10 d-flex align-items-center justify-content-between" >
+            <h1 class="text-secondary fw-bold my-1 fs-2">Payouts</h1>
+            <div class="d-none bg-white rounded-2 d-lg-flex align-items-center border border-gray-200 ps-4" >
+                <i class="ki-duotone ki-magnifier fs-2">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                </i>
+                <input type="text" placeholder="Search by number" class="form-control form-control-solid bg-white" >
+            </div>
+        </div>
+        <div class="d-flex d-lg-none align-items-center gap-3 mx-5">
+            <form class="w-100" id="spree/order_search" data-turbo-frame="kt_ecommerce_orders_table" data-turbo-action="advance" data-action="ajax:success turbo:before-fetch-request->order-checkbox#defaultDeleteButton turbo:submit-end->order-filter#setFilters turbo:submit-end->clear-filters#showClearButton" data-controller="filters" data-order-filter-target="form" data-date-range-filter-target="searchForm" action="/orders" accept-charset="UTF-8" method="get">
+                <div>
+                    <div>
+                        <div class="d-flex align-items-center position-relative my-1">
+                            <span class="position-absolute ms-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                </svg>
+                            </span>
+                            <input class="form-control form-control-sm form-control-outlined bg-transparent ps-14 pe-5 py-3 py-lg-3 rounded-1 w-lg-300px" placeholder="Search by number" data-controller="search" data-js-event="reset-range-filter" data-action="reset-search-filter@window->search#reset reset-range-filter@window->date-range-filter#reset reset-range-filter@window->order-filter#reset reset-range-filter@window->order-flatpickr#clear input->search#getSearchResults" data-kt-ecommerce-order-filter="search" data-order-filter-target="numberOrNameCont" type="search" name="q[number_or_user_first_name_or_user_last_name_cont]" id="q_number_or_user_first_name_or_user_last_name_cont">
+                        </div>
+                    </div>
+                    <input value="2024-09-17" id="order_created_at_start" class="form-control input-sm" datepicker="true" data-controller="search" data-action="input->search#getSearchResults reset-range-filter@window->date-range-filter#reset" data-order-flatpickr-target="startAt" data-order-filter-target="createdAtGteq" data-date-range-filter-target="createdAtGteq" data-js-event="reset-search-filter" autocomplete="off" type="hidden" name="q[created_at_gteq]">
+                    <input id="order_created_at_end" class="form-control input-sm" datepicker="true" data-controller="search" data-action="input->search#getSearchResults reset-range-filter@window->date-range-filter#reset" data-order-flatpickr-target="endAt" data-order-filter-target="createdAtLteq" data-date-range-filter-target="createdAtLteq" data-js-event="reset-search-filter" autocomplete="off" type="hidden" name="q[created_at_lteq]">
+                    <input type="hidden" name="date_range" id="date_range" data-date-range-filter-target="dateRange" autocomplete="off">
+                </div>
+                <div class="d-flex flex-wrap align-items-center gap-3 position-relative w-100">
+                    <input data-order-filter-target="recentEvent" autocomplete="off" type="hidden" name="q[recent_event_eq]" id="q_recent_event_eq">
+                </div>
+            </form>
+            <div data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                <button class="btn btn-primary btn-sm" data-action="click->ktmenu-table-row#click" data-ktmenu-table-row-target="item" data-kt-menu-trigger="click">
+                    <svg width="16" height="16" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.554949 2.99944H0.633752C0.754882 3.51399 1.03113 3.97024 1.41885 4.2961C1.80657 4.62197 2.28366 4.79888 2.77475 4.79888C3.26583 4.79888 3.74292 4.62197 4.13064 4.2961C4.51836 3.97024 4.79461 3.51399 4.91574 2.99944H16.0935C16.2407 2.99944 16.3819 2.93622 16.4859 2.8237C16.59 2.71118 16.6485 2.55857 16.6485 2.39944C16.6485 2.24031 16.59 2.0877 16.4859 1.97517C16.3819 1.86265 16.2407 1.79944 16.0935 1.79944H4.91574C4.79461 1.28489 4.51836 0.82864 4.13064 0.502774C3.74292 0.176907 3.26583 0 2.77475 0C2.28366 0 1.80657 0.176907 1.41885 0.502774C1.03113 0.82864 0.754882 1.28489 0.633752 1.79944H0.554949C0.407767 1.79944 0.266614 1.86265 0.162541 1.97517C0.0584677 2.0877 0 2.24031 0 2.39944C0 2.55857 0.0584677 2.71118 0.162541 2.8237C0.266614 2.93622 0.407767 2.99944 0.554949 2.99944ZM2.77475 1.19944C2.99426 1.19944 3.20885 1.26982 3.39137 1.40168C3.57389 1.53353 3.71615 1.72095 3.80016 1.94022C3.88416 2.15949 3.90614 2.40077 3.86332 2.63355C3.82049 2.86632 3.71478 3.08014 3.55956 3.24797C3.40434 3.41579 3.20658 3.53008 2.99128 3.57638C2.77598 3.62268 2.55281 3.59892 2.35001 3.50809C2.1472 3.41727 1.97386 3.26346 1.8519 3.06612C1.72994 2.86878 1.66485 2.63678 1.66485 2.39944C1.66485 2.08118 1.78178 1.77595 1.98993 1.55091C2.19808 1.32587 2.48038 1.19944 2.77475 1.19944ZM16.0935 7.79944H16.0147C15.8936 7.28489 15.6173 6.82864 15.2296 6.50277C14.8419 6.17691 14.3648 6 13.8737 6C13.3826 6 12.9055 6.17691 12.5178 6.50277C12.1301 6.82864 11.8539 7.28489 11.7327 7.79944H0.554949C0.407767 7.79944 0.266614 7.86265 0.162541 7.97517C0.0584677 8.0877 0 8.24031 0 8.39944C0 8.55857 0.0584677 8.71118 0.162541 8.8237C0.266614 8.93622 0.407767 8.99944 0.554949 8.99944H11.7327C11.8539 9.51399 12.1301 9.97024 12.5178 10.2961C12.9055 10.622 13.3826 10.7989 13.8737 10.7989C14.3648 10.7989 14.8419 10.622 15.2296 10.2961C15.6173 9.97024 15.8936 9.51399 16.0147 8.99944H16.0935C16.2407 8.99944 16.3819 8.93622 16.4859 8.8237C16.59 8.71118 16.6485 8.55857 16.6485 8.39944C16.6485 8.24031 16.59 8.0877 16.4859 7.97517C16.3819 7.86265 16.2407 7.79944 16.0935 7.79944ZM13.8737 9.59944C13.6542 9.59944 13.4396 9.52906 13.2571 9.3972C13.0746 9.26534 12.9323 9.07793 12.8483 8.85866C12.7643 8.63939 12.7423 8.39811 12.7852 8.16533C12.828 7.93255 12.9337 7.71873 13.0889 7.55091C13.2441 7.38309 13.4419 7.2688 13.6572 7.2225C13.8725 7.17619 14.0957 7.19996 14.2985 7.29078C14.5013 7.38161 14.6746 7.53542 14.7966 7.73275C14.9185 7.93009 14.9836 8.1621 14.9836 8.39944C14.9836 8.7177 14.8667 9.02292 14.6585 9.24797C14.4504 9.47301 14.1681 9.59944 13.8737 9.59944ZM16.0935 13.7994H10.4652C10.3441 13.2849 10.0679 12.8286 9.68014 12.5028C9.29242 12.1769 8.81532 12 8.32424 12C7.83315 12 7.35606 12.1769 6.96834 12.5028C6.58062 12.8286 6.30437 13.2849 6.18324 13.7994H0.554949C0.407767 13.7994 0.266614 13.8627 0.162541 13.9752C0.0584677 14.0877 0 14.2403 0 14.3994C0 14.5586 0.0584677 14.7112 0.162541 14.8237C0.266614 14.9362 0.407767 14.9994 0.554949 14.9994H6.18324C6.30437 15.514 6.58062 15.9702 6.96834 16.2961C7.35606 16.622 7.83315 16.7989 8.32424 16.7989C8.81532 16.7989 9.29242 16.622 9.68014 16.2961C10.0679 15.9702 10.3441 15.514 10.4652 14.9994H16.0935C16.2407 14.9994 16.3819 14.9362 16.4859 14.8237C16.59 14.7112 16.6485 14.5586 16.6485 14.3994C16.6485 14.2403 16.59 14.0877 16.4859 13.9752C16.3819 13.8627 16.2407 13.7994 16.0935 13.7994ZM8.32424 15.5994C8.10472 15.5994 7.89013 15.5291 7.70761 15.3972C7.52509 15.2653 7.38283 15.0779 7.29882 14.8587C7.21482 14.6394 7.19284 14.3981 7.23566 14.1653C7.27849 13.9326 7.3842 13.7187 7.53942 13.5509C7.69464 13.3831 7.89241 13.2688 8.10771 13.2225C8.32301 13.1762 8.54617 13.2 8.74898 13.2908C8.95178 13.3816 9.12513 13.5354 9.24708 13.7328C9.36904 13.9301 9.43413 14.1621 9.43413 14.3994C9.43413 14.7177 9.3172 15.0229 9.10905 15.248C8.90091 15.473 8.6186 15.5994 8.32424 15.5994Z" fill="white"></path>
+                    </svg>
+                </button>
+                <div id="orders-filters-dropdown" data-ktmenu-table-row-target="sub" class="mt-2 menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fs-7 w-350px" data-kt-menu="true">
+                    <div class="d-flex align-items-center justify-content-between px-6 py-5 border-bottom border-gray-200">
+                        <h1 class="fs-2">Filters</h1>
+                    </div>
+                    <div class="px-6 py-5">
+                        <h1 class="fs-4 fw-medium">Status</h1>
+                        <div class="mt-4 d-flex flex-wrap gap-3">
+                            <button name="button" type="submit" class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary active" data-status="" data-action="click->order-filter#filterStatus">
+                                All (12)
+                            </button>  
+                            <button name="button" type="submit" class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " data-status="0" data-action="click->order-filter#filterStatus">
+                                Paid
+                            </button>  
+                            <button name="button" type="submit" class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " data-status="1" data-action="click->order-filter#filterStatus">
+                                Unpaid
+                            </button>
+                        </div>
+                        <h1 class="mt-8 fs-4 fw-medium">Date</h1>
+                        <div class="mt-4 d-flex align-items-center justify-content-between form-control form-control-solid rounded-1 py-2 w-100">
+                            <input data-order-flatpickr-target="pickr" placeholder="Pick Date range" class="p-0 border-0 bg-gray-100 fs-6 flatpickr-input" type="hidden"><input class="p-0 border-0 bg-gray-100 fs-6 form-control input" placeholder="Pick Date range" tabindex="0" type="text" readonly="readonly">
+                            <button class="bg-transparent border-0" data-order-flatpickr-target="pickrClear" data-action="click->order-flatpickr#clear" id="kt_ecommerce_sales_flatpickr_clear">
+                                <img src="https://d3jpyr6d7iubju.cloudfront.net/assets/calendar-8f487bda15b8977aa663b8daf2106862c6b731605bcf5f30c0d29af442859844.svg">
+                            </button>
+                        </div>
+                        <div class="mt-4 d-flex align-items-center gap-3">
+                            <button class="btn btn-sm fs-8 btn-outline btn-active-primary " data-date-range-filter-target="today" data-action="click->date-range-filter#filter">
+                            Today
+                            </button>
+                            <button class="btn btn-sm fs-8 btn-outline btn-active-primary " data-date-range-filter-target="week" data-action="click->date-range-filter#filter">This Week</button>
+                            <button class="btn btn-sm fs-8 btn-outline btn-active-primary " data-date-range-filter-target="month" data-action="click->date-range-filter#filter">This Month</button>
+                        </div>
+                        <div class="mt-6 d-flex align-items-centet gap-4">
+                            <a class="w-100" data-turbo-frame="_top" data-turbo-action="advance" href="/orders">
+                            <button class="btn btn-primary btn-sm w-100">Apply Filters</button>
+                            </a>                  <a class="w-100" data-turbo-frame="_top" data-turbo-action="advance" href="/orders">
+                            <button class="btn btn-sm bg-light-primary text-primary w-100">Clear Filters</button>
+                            </a>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <turbo-frame id="order_preferences" src="https://staging.quik.al/order/column_preferences/406/edit?q%5Bcreated_at_gteq%5D=&amp;q%5Bcreated_at_lteq%5D=&amp;q%5Bnumber_or_user_first_name_or_user_last_name_cont%5D=&amp;q%5Brecent_event_eq%5D=">
+                <div class="btn-group w-100 w-sm-auto" data-controller="kt-popover">
+                    <button type="button" class="rounded-left-1 btn btn-outline btn-sm px-4 d-none d-lg-block" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="bottom" title="" data-bs-content="
+                            <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                            <div class=&quot;d-flex align-items-center gap-2&quot;>
+                            <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                            <span>Columns</span>
+                            </div>
+                            </div>" data-bs-original-title="" data-kt-initialized="1">
+                            <img src="https://d3jpyr6d7iubju.cloudfront.net/assets/columns-f353cd1c04717e7c943ec89ebf653474d1b14f2285de9b2ba78b1b5cf870e27c.svg">
+                        </div>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm d-lg-none rounded-1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        <svg width="16" height="16" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.75" y="0.75" width="15.3097" height="12.8" rx="1.25" stroke="white" stroke-width="1.5"></rect>
+                            <rect x="4.95166" y="0.75" width="6.90486" height="12.8" stroke="white" stroke-width="1.5"></rect>
+                        </svg>
+                    </button>
+                    <div id="column-preferences-dropdown" class="right-0 dropdown-menu dropdown-menu-lg-end menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px p-3">
+                        <form data-controller="preferences" data-preferences-target="form" action="/order/column_preferences/406" accept-charset="UTF-8" method="post">
+                            <input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="OTmmrOJClRNq3mq4ZsrqJ9QTJy6IOOnySEQy2XmNf7cV7XOz1g-fIu6LchnxOc_BJK8WoIStRh4BOxhrIjb3eA" autocomplete="off">
+                            <div class="d-flex align-items-center p-2 pb-5 border-bottom border-gray-200 mb-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" id="columns_" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="change->preferences#showAllColumns" data-preferences-target="showAllCheckbox">
+                                </div>
+                                <label class="pl-1" for="columns_">Show all columns</label>
+                            </div>
+                            <input value="" data-order-filter-target="prefFilterCreatedAtGteq" autocomplete="off" type="hidden" name="user[created_at_gteq]" id="user_created_at_gteq">
+                            <input value="" data-order-filter-target="prefFirstNamelastName" autocomplete="off" type="hidden" name="user[number_or_user_first_name_or_user_last_name_cont]" id="user_number_or_user_first_name_or_user_last_name_cont">
+                            <input value="" data-order-filter-target="prefFilterCreatedAtLteq" autocomplete="off" type="hidden" name="user[created_at_lteq]" id="user_created_at_lteq">
+                            <input value="" data-order-filter-target="prefFilterRecentEventEq" autocomplete="off" type="hidden" name="user[recent_event_eq]" id="user_recent_event_eq">
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Order ID</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Buyer</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Status</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Total</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Date added</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Weight</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="quick_zone" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-normal" for="columns_">Zone</label>
+                            </div>
+                            <div class="menu-item px-3">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </turbo-frame>
+        </div>
+        <div class="d-none d-lg-block bg-white rounded-3 mx-5 mx-lg-10 p-4 border border-gray-200" >
+            <div class="d-flex justify-content-between" >
+                <div class="d-none d-lg-flex align-items-center gap-lg-1" >
+                    <button class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary active" >All (12)</button>
+                    <button class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " >Paid (2)</button>
+                    <button class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " >Unpaid (4)</button>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-lg-1" >
+                    <button class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " >Today</button>
+                    <button class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " >This Week</button>
+                    <button class="btn p-2 btn-sm btn-outline my-2 my-lg-0 me-1 fs-8 btn-active-primary " >This Month</button>
+                    <div class="d-flex align-items-center justify-content-between form-control form-control-outlined rounded-1 py-2 fs-8 w-150px">
+                        <input class="p-0 border-0 fs-8 form-control input fs-" placeholder="Pick Date range" tabindex="0" type="text" readonly="readonly">
+                        <button class="bg-transparent border-0" data-order-flatpickr-target="pickrClear" data-action="click->order-flatpickr#clear" id="kt_ecommerce_sales_flatpickr_clear">
+                            <i class="ki-duotone ki-calendar">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                            </i>
+                        </button>
+                    </div>
+                    <div class="btn-group w-100 w-sm-auto" data-controller="kt-popover">
+                        <button type="button" class="btn btn-outline btn-sm px-4 d-none d-lg-block" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                           <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="bottom" title="" data-bs-content="
+                              <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                              <div class=&quot;d-flex align-items-center gap-2&quot;>
+                              <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                              <span>Columns</span>
+                              </div>
+                              </div>" data-bs-original-title="" data-kt-initialized="1">
+                              <img src="https://d3jpyr6d7iubju.cloudfront.net/assets/columns-f353cd1c04717e7c943ec89ebf653474d1b14f2285de9b2ba78b1b5cf870e27c.svg">
+                           </div>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm d-lg-none" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                           <svg width="16" height="16" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="0.75" y="0.75" width="15.3097" height="12.8" rx="1.25" stroke="white" stroke-width="1.5"></rect>
+                              <rect x="4.95166" y="0.75" width="6.90486" height="12.8" stroke="white" stroke-width="1.5"></rect>
+                           </svg>
+                        </button>
+                        <div id="column-preferences-dropdown" class="dropdown-menu dropdown-menu-lg-end menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px p-3">
+                           <form data-controller="preferences" data-preferences-target="form" action="/order/column_preferences/406" accept-charset="UTF-8" method="post">
+                              <input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="vucRCWttLvWXfN_db3vrT3GqWTLyFe-8NuXN4Ol9lFCSM8QWXyAkxBMpx3z4iM6pgRZovP6AQFB_mudSssYcnw" autocomplete="off">
+                                <div class="d-flex align-items-center p-2 pb-5 border-bottom border-gray-200 mb-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" id="columns_" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="change->preferences#showAllColumns" data-preferences-target="showAllCheckbox">
+                                    </div>
+                                    <label class="pl-1" for="columns_">Show all columns</label>
+                                </div>
+                                <input value="" data-order-filter-target="prefFilterCreatedAtGteq" autocomplete="off" type="hidden" name="user[created_at_gteq]" id="user_created_at_gteq">
+                                <input value="" data-order-filter-target="prefFirstNamelastName" autocomplete="off" type="hidden" name="user[number_or_user_first_name_or_user_last_name_cont]" id="user_number_or_user_first_name_or_user_last_name_cont">
+                                <input value="" data-order-filter-target="prefFilterCreatedAtLteq" autocomplete="off" type="hidden" name="user[created_at_lteq]" id="user_created_at_lteq">
+                                <input value="" data-order-filter-target="prefFilterRecentEventEq" autocomplete="off" type="hidden" name="user[recent_event_eq]" id="user_recent_event_eq">
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Order ID</label>
+                                </div>
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Buyer</label>
+                                </div>
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Status</label>
+                                </div>
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Total</label>
+                                </div>
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Date Added</label>
+                                </div>
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Weight</label>
+                                </div>
+                                <div class="d-flex align-items-center p-2">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="quick_zone" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    </div>
+                                    <label class="pl-1 fw-normal" for="columns_">Zone</label>
+                                </div>
+                           </form>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 mx-lg-10 pb-10 bg-white bg-white border border-gray-200 rounded-3" >
+          <div class="table-responsive" >
+            <table class="table align-middle table-hover table-row-dashed fs-6 gy-5 dataTable no-footer" >
+                <thead>
+                    <tr id="order_headers" class="text-start text-gray-500 bg-gray-200 fw-bold fs-7 text-uppercase gs-0">
+                        <th class="w-30px p-3">
+                        </th>
+                        <th class="min-w-200px min-w-lg-100px p-3">
+                          Payout Number
+                        </th>
+                        <th class="min-w-175px p-3">
+                          Amount
+                        </th>
+                        <th class="min-w-100px p-3">Status</th>
+                        <th class="min-w-200px min-w-lg-100px p-3">Business Name</th>
+                        <th class="min-w-150px min-w-lg-100px p-3">Collected By</th>
+                        <th class="min-w-150px min-w-lg-100px p-3">Collected Date</th>
+                        <th class="min-w-70px text-end p-3 pe-5">Actions</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-danger fw-semibold fs-7" >Unpaid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
+                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
+                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                                          <span>Edit</span>
+                                  </div>
+                                  </div>" data-bs-original-title="" data-kt-initialized="1">
+                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
+                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
+                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
+                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
+                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
+                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
+                                        </svg>                                            
+                                    </a>                  
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-danger fw-semibold fs-7" >Unpaid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
+                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
+                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                                          <span>Edit</span>
+                                  </div>
+                                  </div>" data-bs-original-title="" data-kt-initialized="1">
+                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
+                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
+                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
+                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
+                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
+                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
+                                        </svg>                                            
+                                    </a>                  
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-danger fw-semibold fs-7" >Unpaid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
+                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
+                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                                          <span>Edit</span>
+                                  </div>
+                                  </div>" data-bs-original-title="" data-kt-initialized="1">
+                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
+                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
+                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
+                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
+                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
+                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
+                                        </svg>                                            
+                                    </a>                  
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-danger fw-semibold fs-7" >Unpaid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
+                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
+                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                                          <span>Edit</span>
+                                  </div>
+                                  </div>" data-bs-original-title="" data-kt-initialized="1">
+                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
+                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
+                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
+                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
+                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
+                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
+                                        </svg>                                            
+                                    </a>                  
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Edel Company</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>Kristjana Bahushi</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <!-- NO Actions Available for Paid Payouts -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+       
+    </main>
+    
+    <script>
+        var datepicker = document.getElementById('kt_datepicker_1');
+        datepicker.flatpickr();
+    </script>
+
+    
+        <script src="./animations.js" ></script>
+
+		<script src="../theme/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../theme/assets/js/scripts.bundle.js"></script>
+		<script src="../theme/assets/plugins/custom/leaflet/leaflet.bundle.js"></script>
+		<script src="../theme/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<script src="../theme/assets/js/widgets.bundle.js"></script>
+		<script src="../theme/assets/js/custom/widgets.js"></script>
+		<script src="../theme/assets/js/custom/apps/chat/chat.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/type.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/budget.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/settings.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/team.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/targets.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/files.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/complete.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-project/main.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/select-location.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/create-app.js"></script>
+		<script src="../theme/assets/js/custom/utilities/modals/users-search.js"></script>
+
+</body>
+</html>
