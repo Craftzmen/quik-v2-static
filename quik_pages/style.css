@@ -275,6 +275,10 @@ table > thead > tr:nth-child(2) > th {
   right: 0 !important;
 }
 
+.bg-primary-20 {
+  background-color: #D7EFF8;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
