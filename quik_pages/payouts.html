@@ -92,12 +92,12 @@
     <main>
         <div class="py-8 mx-5 mx-lg-10 d-flex align-items-center justify-content-between" >
             <h1 class="text-secondary fw-bold my-1 fs-2">Payouts</h1>
-            <div class="d-none bg-white rounded-2 d-lg-flex align-items-center border border-gray-200 ps-4" >
+            <div class="d-none bg-white rounded-2 d-lg-flex align-items-center border border-gray-200 ps-4 w-300px" >
                 <i class="ki-duotone ki-magnifier fs-2">
                     <span class="path1"></span>
                     <span class="path2"></span>
                 </i>
-                <input type="text" placeholder="Search by number" class="form-control form-control-solid bg-white" >
+                <input type="text" placeholder="Search by payout number" class="form-control form-control-solid bg-white" >
             </div>
         </div>
         <div class="d-flex d-lg-none align-items-center gap-3 mx-5">
@@ -145,6 +145,33 @@
                                 Unpaid
                             </button>
                         </div>
+                        <h1 class="mt-8 fs-4 fw-medium">Type</h1>
+                        <div class="d-flex align-items-center gap-1" >
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-semibold text-gray-700" for="columns_">Lek</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-semibold text-gray-700" for="columns_">(€) Euro</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-semibold text-gray-700" for="columns_">GBP</label>
+                            </div>
+                            <div class="d-flex align-items-center p-2">
+                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                </div>
+                                <label class="pl-1 fw-semibold text-gray-700" for="columns_">($) Dollars</label>
+                            </div>
+                        </div>
                         <h1 class="mt-8 fs-4 fw-medium">Date</h1>
                         <div class="mt-4 d-flex align-items-center justify-content-between form-control form-control-solid rounded-1 py-2 w-100">
                             <input data-order-flatpickr-target="pickr" placeholder="Pick Date range" class="p-0 border-0 bg-gray-100 fs-6 flatpickr-input" type="hidden"><input class="p-0 border-0 bg-gray-100 fs-6 form-control input" placeholder="Pick Date range" tabindex="0" type="text" readonly="readonly">
@@ -169,19 +196,35 @@
                     </div>
                 </div>
             </div>
+            <div id="column-preferences-dropdown" class="dropdown-menu dropdown-menu-lg-end menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px p-3">
+                <form data-controller="preferences" data-preferences-target="form" action="/order/column_preferences/406" accept-charset="UTF-8" method="post">
+                   <input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="vucRCWttLvWXfN_db3vrT3GqWTLyFe-8NuXN4Ol9lFCSM8QWXyAkxBMpx3z4iM6pgRZovP6AQFB_mudSssYcnw" autocomplete="off">
+                     <input value="" data-order-filter-target="prefFilterCreatedAtGteq" autocomplete="off" type="hidden" name="user[created_at_gteq]" id="user_created_at_gteq">
+                     <input value="" data-order-filter-target="prefFirstNamelastName" autocomplete="off" type="hidden" name="user[number_or_user_first_name_or_user_last_name_cont]" id="user_number_or_user_first_name_or_user_last_name_cont">
+                     <input value="" data-order-filter-target="prefFilterCreatedAtLteq" autocomplete="off" type="hidden" name="user[created_at_lteq]" id="user_created_at_lteq">
+                     <input value="" data-order-filter-target="prefFilterRecentEventEq" autocomplete="off" type="hidden" name="user[recent_event_eq]" id="user_recent_event_eq">
+                     <div class="d-flex align-items-center p-2">
+                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                             <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                         </div>
+                         <label class="pl-1 fw-semibold text-gray-700" for="columns_">Cash</label>
+                     </div>
+                     <div class="d-flex align-items-center p-2">
+                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                             <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                         </div>
+                         <label class="pl-1 fw-semibold text-gray-700" for="columns_">Misc Fee</label>
+                     </div>
+                     <div class="d-flex align-items-center p-2">
+                         <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                             <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                         </div>
+                         <label class="pl-1 fw-semibold text-gray-700" for="columns_">Card</label>
+                     </div>
+                </form>
+             </div>
             <turbo-frame id="order_preferences" src="https://staging.quik.al/order/column_preferences/406/edit?q%5Bcreated_at_gteq%5D=&amp;q%5Bcreated_at_lteq%5D=&amp;q%5Bnumber_or_user_first_name_or_user_last_name_cont%5D=&amp;q%5Brecent_event_eq%5D=">
                 <div class="btn-group w-100 w-sm-auto" data-controller="kt-popover">
-                    <button type="button" class="rounded-left-1 btn btn-outline btn-sm px-4 d-none d-lg-block" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="bottom" title="" data-bs-content="
-                            <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
-                            <div class=&quot;d-flex align-items-center gap-2&quot;>
-                            <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
-                            <span>Columns</span>
-                            </div>
-                            </div>" data-bs-original-title="" data-kt-initialized="1">
-                            <img src="https://d3jpyr6d7iubju.cloudfront.net/assets/columns-f353cd1c04717e7c943ec89ebf653474d1b14f2285de9b2ba78b1b5cf870e27c.svg">
-                        </div>
-                    </button>
                     <button type="button" class="btn btn-primary btn-sm d-lg-none rounded-1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                         <svg width="16" height="16" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.75" y="0.75" width="15.3097" height="12.8" rx="1.25" stroke="white" stroke-width="1.5"></rect>
@@ -205,45 +248,43 @@
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Order ID</label>
+                                <label class="pl-1 fw-normal" for="columns_">Payout Number</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Buyer</label>
+                                <label class="pl-1 fw-normal" for="columns_">Payout Date</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Status</label>
+                                <label class="pl-1 fw-normal" for="columns_">Amount</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Total</label>
+                                <label class="pl-1 fw-normal" for="columns_">No of Transactions</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Date added</label>
+                                <label class="pl-1 fw-normal" for="columns_">Collected Date</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                     <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Weight</label>
+                                <label class="pl-1 fw-normal" for="columns_">Collected On</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                    <input type="checkbox" name="columns[]" id="columns_" value="quick_zone" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                    <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                 </div>
-                                <label class="pl-1 fw-normal" for="columns_">Zone</label>
-                            </div>
-                            <div class="menu-item px-3">
+                                <label class="pl-1 fw-normal" for="columns_">Collected By</label>
                             </div>
                         </form>
                     </div>
@@ -271,6 +312,60 @@
                         </button>
                     </div>
                     <div class="btn-group w-100 w-sm-auto" data-controller="kt-popover">
+                        <button type="button" class="btn btn-outline btn-sm px-4 d-none d-lg-block" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                            <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="bottom" title="" data-bs-content="
+                               <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
+                               <div class=&quot;d-flex align-items-center gap-2&quot;>
+                               <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
+                               <span>Columns</span>
+                               </div>
+                               </div>" data-bs-original-title="" data-kt-initialized="1">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-700">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                 </svg>  
+                            </div>
+                         </button>
+                         <button type="button" class="btn btn-primary btn-sm d-lg-none" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                            <svg width="16" height="16" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <rect x="0.75" y="0.75" width="15.3097" height="12.8" rx="1.25" stroke="white" stroke-width="1.5"></rect>
+                               <rect x="4.95166" y="0.75" width="6.90486" height="12.8" stroke="white" stroke-width="1.5"></rect>
+                            </svg>
+                         </button>
+                         <div id="column-preferences-dropdown" class="dropdown-menu dropdown-menu-lg-end menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px p-3">
+                            <form data-controller="preferences" data-preferences-target="form" action="/order/column_preferences/406" accept-charset="UTF-8" method="post">
+                               <input type="hidden" name="_method" value="patch" autocomplete="off"><input type="hidden" name="authenticity_token" value="vucRCWttLvWXfN_db3vrT3GqWTLyFe-8NuXN4Ol9lFCSM8QWXyAkxBMpx3z4iM6pgRZovP6AQFB_mudSssYcnw" autocomplete="off">
+                                 <input value="" data-order-filter-target="prefFilterCreatedAtGteq" autocomplete="off" type="hidden" name="user[created_at_gteq]" id="user_created_at_gteq">
+                                 <input value="" data-order-filter-target="prefFirstNamelastName" autocomplete="off" type="hidden" name="user[number_or_user_first_name_or_user_last_name_cont]" id="user_number_or_user_first_name_or_user_last_name_cont">
+                                 <input value="" data-order-filter-target="prefFilterCreatedAtLteq" autocomplete="off" type="hidden" name="user[created_at_lteq]" id="user_created_at_lteq">
+                                 <input value="" data-order-filter-target="prefFilterRecentEventEq" autocomplete="off" type="hidden" name="user[recent_event_eq]" id="user_recent_event_eq">
+                                 <div class="d-flex align-items-center p-2">
+                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                         <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                     </div>
+                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">Lek</label>
+                                 </div>
+                                 <div class="d-flex align-items-center p-2">
+                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                         <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                     </div>
+                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">(€) Euro</label>
+                                 </div>
+                                 <div class="d-flex align-items-center p-2">
+                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                         <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                     </div>
+                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">GBP</label>
+                                 </div>
+                                 <div class="d-flex align-items-center p-2">
+                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                         <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                     </div>
+                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">($) Dollars</label>
+                                 </div>
+                            </form>
+                         </div>
+                     </div>
+                     <div class="btn-group w-100 w-sm-auto" data-controller="kt-popover">
                         <button type="button" class="btn btn-outline btn-sm px-4 d-none d-lg-block" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                            <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="bottom" title="" data-bs-content="
                               <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
@@ -305,43 +400,43 @@
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Order ID</label>
+                                    <label class="pl-1 fw-normal" for="columns_">Payout Number</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Buyer</label>
+                                    <label class="pl-1 fw-normal" for="columns_">Payout Date</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Status</label>
+                                    <label class="pl-1 fw-normal" for="columns_">Amount</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Total</label>
+                                    <label class="pl-1 fw-normal" for="columns_">No of Transactions</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Date Added</label>
+                                    <label class="pl-1 fw-normal" for="columns_">Collected Date</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Weight</label>
+                                    <label class="pl-1 fw-normal" for="columns_">Collected On</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input type="checkbox" name="columns[]" id="columns_" value="quick_zone" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
+                                        <input type="checkbox" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
                                     </div>
-                                    <label class="pl-1 fw-normal" for="columns_">Zone</label>
+                                    <label class="pl-1 fw-normal" for="columns_">Collected By</label>
                                 </div>
                            </form>
                         </div>
@@ -359,15 +454,21 @@
                         <th class="min-w-200px min-w-lg-100px p-3">
                           Payout Number
                         </th>
+                        <th class="min-w-200px min-w-lg-100px p-3">
+                          Payout Date
+                        </th>
+                        <th class="min-w-200px min-w-lg-100px p-3">
+                          No of Transactions
+                        </th>
                         <th class="min-w-175px p-3">
                           Amount
                         </th>
                         <th class="min-w-100px p-3">Status</th>
-                        <th class="min-w-200px min-w-lg-100px p-3">Business Name</th>
-                        <th class="min-w-150px min-w-lg-100px p-3">Collected By</th>
                         <th class="min-w-150px min-w-lg-100px p-3">Collected Date</th>
+                        <th class="min-w-150px min-w-lg-100px p-3">Collected On</th>
+                        <th class="min-w-150px min-w-lg-100px p-3">Collected By</th>
                         <th class="min-w-70px text-end p-3 pe-5">Actions</th>
-                      </tr>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -379,6 +480,12 @@
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
                         </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
+                        </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
                         </td>
@@ -394,16 +501,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -415,13 +529,68 @@
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
                         </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
+                        </td>
+                        <td class="p-2" data-controller="kt-popover">
+                         <span class="fw-semibold" >ALL73500</span>
+                        </td>
+                        <td class="p-2">
+                            <div class="d-inline-block" >
+                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
+                                    <i class="ki-duotone ki-check-circle text-success fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <span class="text-success fw-semibold fs-7" >Paid</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>12/12/2024</span>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                          <span>12/12/2024</span>
+                        </td>
+                        <td class="p-2 text-gray-600" >
+                            <span>01/12/2024</span>
+                        </td>
+                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
+                        </td>
+                    </tr>
+                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
+                        <td class="ps-5 p-2">
+                          <div class="form-check form-check-sm form-check-custom form-check-solid">
+                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                          </div>
+                        </td>
+                        <td class="p-2">
+                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
+                        </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
                         </td>
                         <td class="p-2">
                             <div class="d-inline-block" >
                                 <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
-                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                    <i class="ki-duotone ki-cross-circle text-danger fs-3">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -430,34 +599,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
-                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
-                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
-                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
-                                          <span>Edit</span>
-                                  </div>
-                                  </div>" data-bs-original-title="" data-kt-initialized="1">
-                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
-                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
-                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
-                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
-                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
-                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
-                                        </svg>                                            
-                                    </a>                  
-                                </div>
-                            </div>
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -468,6 +626,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -484,16 +648,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -504,6 +675,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -520,16 +697,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -540,6 +724,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -547,7 +737,7 @@
                         <td class="p-2">
                             <div class="d-inline-block" >
                                 <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
-                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                    <i class="ki-duotone ki-cross-circle text-danger fs-3">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -556,34 +746,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
-                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
-                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
-                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
-                                          <span>Edit</span>
-                                  </div>
-                                  </div>" data-bs-original-title="" data-kt-initialized="1">
-                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
-                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
-                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
-                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
-                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
-                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
-                                        </svg>                                            
-                                    </a>                  
-                                </div>
-                            </div>
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -594,6 +773,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -610,16 +795,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -630,6 +822,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -646,16 +844,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -666,6 +871,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -673,7 +884,7 @@
                         <td class="p-2">
                             <div class="d-inline-block" >
                                 <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
-                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                    <i class="ki-duotone ki-cross-circle text-danger fs-3">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -682,34 +893,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
-                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
-                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
-                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
-                                          <span>Edit</span>
-                                  </div>
-                                  </div>" data-bs-original-title="" data-kt-initialized="1">
-                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
-                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
-                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
-                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
-                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
-                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
-                                        </svg>                                            
-                                    </a>                  
-                                </div>
-                            </div>
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -720,6 +920,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -736,16 +942,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -756,6 +969,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -772,16 +991,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                     <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
@@ -792,6 +1018,12 @@
                         </td>
                         <td class="p-2">
                             <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
+                        </td>
+                        <td class="p-2 text-gray-600">
+                            <span>12/12/2024</span>
+                          </td>
+                        <td class="p-2 text-gray-600">
+                            <span class="fw-semibold" >5</span>
                         </td>
                         <td class="p-2" data-controller="kt-popover">
                          <span class="fw-semibold" >ALL73500</span>
@@ -799,7 +1031,7 @@
                         <td class="p-2">
                             <div class="d-inline-block" >
                                 <div class="d-flex align-items-center gap-1 bg-light-danger py-1 px-2 rounded-1">
-                                    <i class="ki-duotone ki-check-circle text-danger fs-3">
+                                    <i class="ki-duotone ki-cross-circle text-danger fs-3">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
@@ -808,70 +1040,23 @@
                             </div>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
+                          <span>12/12/2024</span>
                         </td>
                         <td class="p-2 text-gray-600" >
                             <span>01/12/2024</span>
                         </td>
                         <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <div data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left" title="" data-bs-content="
-                                  <div class=&quot;d-flex flex-column p-0 gap-3&quot; >
-                                      <div class=&quot;d-flex align-items-center gap-2&quot;>
-                                          <img width=&quot;20&quot; height=&quot;20&quot; src=&quot;https://d3jpyr6d7iubju.cloudfront.net/assets/info-black-0451a30f1f12efb8658932a3880b0b65f4159ac5cb0e1390c8f4d265465d201e.svg&quot; />
-                                          <span>Edit</span>
-                                  </div>
-                                  </div>" data-bs-original-title="" data-kt-initialized="1">
-                                    <a class="p-2 rounded-circle bg-hover-white" data-turbo-frame="_top" href="/orders/2520083/edit">
-                                        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.209658 0H9.51614L9.7491 0.0232953L10.1218 0.069886L10.5877 0.209658L10.809 0.314487L10.9255 0.361078L11.1119 0.477554L11.2167 0.535793L11.3448 0.628974L11.4846 0.733803L11.6477 0.873575L12.1252 1.35113L12.1835 1.39772L12.265 1.4909L12.9755 2.20141V2.2247L13.0221 2.248L14.0121 3.23805L21.2104 3.2497L21.3968 3.29629L21.5831 3.38947L21.7113 3.48265L21.8044 3.57583L21.9093 3.71561L21.9675 3.85538L22.0257 4.04174V14.1403L21.9675 14.3266L21.9093 14.4781L21.8394 14.5712L21.7928 14.6295L21.7113 14.7227L21.5365 14.8391L21.4434 14.8857L21.2803 14.9207L21.1755 14.9323H4.79884L4.61248 14.909L4.496 14.8741L4.30964 14.7576L4.19316 14.6528L4.14657 14.5829L4.08833 14.513L4.03009 14.3849L3.96021 14.1869L3.92526 13.9772V6.27809H0.186363L0.0931813 6.24315L0.0465907 6.18491L0 6.06844V0.19801L0.034943 0.104829L0.116477 0.034943L0.209658 0ZM0.815337 0.50085L0.50085 0.512497V5.7656H2.44601V0.512497L1.65397 0.50085H0.815337ZM3.29629 0.50085L2.95851 0.512497V5.7656L5.68406 5.77724L6.09173 5.83548L6.27809 5.90537L6.46446 5.9869L6.67411 6.12667L6.80224 6.2315L6.94201 6.35963L8.52609 7.94371L8.59598 8.02524L8.68916 8.10678L10.0053 9.42296L10.2034 9.55109L10.413 9.63262L10.611 9.69086L10.7042 9.70251H10.9255L11.0653 9.67921L11.2516 9.62097L11.4264 9.55109L11.6127 9.43461L11.7292 9.32978L11.7991 9.27154L11.9505 9.05024L12.0087 8.93376L12.1019 8.65422L12.1252 8.52609V8.2582L12.0786 8.07183L11.9854 7.79229L11.8224 7.55934L11.2284 6.96531L11.1468 6.89542L11.0653 6.80224L10.9954 6.744L10.9139 6.65082L10.844 6.59258L10.7624 6.4994L9.07353 4.81049L9.0153 4.7639L8.93376 4.67072L8.88717 4.64742V4.62412L8.82893 4.56589L8.73575 4.48435L8.65422 4.39117L8.58433 4.33293L8.51445 4.2514H8.49115L8.46785 4.20481L6.68576 2.42272L6.63917 2.34118L6.62752 2.29459V2.21306L6.66247 2.10823L6.7207 2.03834L6.81389 2.0034H6.95366L7.05849 2.04999L7.14002 2.14317L7.2332 2.2247L7.30309 2.30624H7.32638L7.34968 2.35283L7.44286 2.43436L8.2582 3.2497H13.255L13.2085 3.17981L12.9755 2.94686L12.9173 2.87697L12.8241 2.79544L12.2999 2.2713L12.2068 2.18976L11.24 1.22301L11.042 1.07159L10.8323 0.931813L10.646 0.826984L10.3082 0.675565L10.0869 0.617326L9.7258 0.535793L9.4812 0.512497L9.02694 0.50085H3.29629ZM8.82893 3.78549V3.82044L9.28319 4.27469L9.32978 4.33293L9.42296 4.41447L9.4812 4.48435L9.57438 4.56589L9.64427 4.64742L9.73745 4.72895L9.79569 4.79884L9.88887 4.88037L10.215 5.20651H21.5016V4.21646L21.4667 4.03009L21.4084 3.93691L21.3385 3.85538L21.257 3.80879L21.1871 3.79714L8.82893 3.78549ZM10.7508 5.7423L10.8207 5.82383L10.9954 5.9869L12.2184 7.20991L12.265 7.26815H21.5016V5.7423H10.7508ZM4.46106 6.27809V7.26815L4.4727 7.27979H6.83718L7.09343 7.26815L7.02354 7.18661L6.51105 6.67411L6.38292 6.56928L6.2315 6.46446L6.09173 6.39457L5.84713 6.31304L5.64912 6.27809H4.46106ZM4.46106 7.79229V13.9656L4.48435 14.1286L4.53094 14.2218L4.58918 14.2917L4.71731 14.3849L4.82213 14.4198H21.1289L21.2453 14.3849L21.3502 14.315L21.4434 14.2218L21.4783 14.117L21.5016 13.9888V7.79229H12.5562L12.6144 8.16502L12.6261 8.2582V8.57268L12.5562 8.98035L12.463 9.17836L12.3698 9.36473L12.2184 9.57438L12.0786 9.7258L11.9156 9.86558L11.6943 10.0053L11.4264 10.1218L11.2284 10.1801L11.0653 10.2034H10.5528L10.3431 10.1684L10.1801 10.1102L9.91217 9.9937L9.81898 9.92381L9.71416 9.85393L9.55109 9.71416L9.15507 9.31814H9.13177L9.10848 9.27154L7.62922 7.79229H4.46106Z" fill="#4FC9F3"/>
-                                            <path d="M5.68594 10.75H12.0106L12.162 10.7966L12.2203 10.8432L12.2669 10.9364L12.2785 11.0528L12.2319 11.1693L12.1737 11.2392L12.0805 11.2741H5.65099L5.56946 11.2508L5.48793 11.181L5.42969 11.0645V10.983L5.47628 10.8781L5.53452 10.8082L5.68594 10.75Z" fill="#4FC9F3"/>
-                                            <path d="M5.6044 12.627H12.1038L12.1737 12.6619L12.2436 12.7551L12.2669 12.8017L12.2785 12.9065L12.2436 13.0113L12.1737 13.0929L12.0689 13.1395L11.9873 13.1511H5.67429L5.53452 13.0812L5.46463 12.9997L5.42969 12.9298V12.8366L5.48793 12.7201L5.54616 12.6619L5.6044 12.627Z" fill="#4FC9F3"/>
-                                            <rect x="14.25" y="7.2168" width="6.08591" height="6.08591" rx="3.04296" fill="white" stroke="#4FC9F3" stroke-width="0.5"/>
-                                            <path d="M16.8718 11.4617C16.8319 11.5017 16.7753 11.535 16.7253 11.535C16.6753 11.535 16.6187 11.5 16.5771 11.46L15.6445 10.5275L15.9409 10.2311L16.727 11.0171L18.8052 8.92383L19.0966 9.22524L16.8718 11.4617Z" fill="#4FC9F3"/>
-                                        </svg>                                            
-                                    </a>                  
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="kt_ecommerce_orders_table_row_2520083" data-controller="ktmenu-table-row" data-ktmenu-table-row-options-value="{&quot;dropdown&quot;:{&quot;hoverTimeout&quot;:200,&quot;zindex&quot;:105},&quot;accordion&quot;:{&quot;slideSpeed&quot;:250,&quot;expand&quot;:false}}" data-kt-menu="true">
-                        <td class="ps-5 p-2">
-                          <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
-                          </div>
-                        </td>
-                        <td class="p-2">
-                            <a class="fw-semibold text-black text-hover-primary mb-1" data-turbo-frame="_top" href="/orders/2520083">341561</a>
-                        </td>
-                        <td class="p-2" data-controller="kt-popover">
-                         <span class="fw-semibold" >ALL73500</span>
-                        </td>
-                        <td class="p-2">
-                            <div class="d-inline-block" >
-                                <div class="d-flex align-items-center gap-1 bg-light-success py-1 px-2 rounded-1">
-                                    <i class="ki-duotone ki-check-circle text-success fs-3">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                    </i>
-                                    <span class="text-success fw-semibold fs-7" >Paid</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="p-2 text-gray-600">
-                          <span>Edel Company</span>
-                        </td>
-                        <td class="p-2 text-gray-600">
-                          <span>Kristjana Bahushi</span>
-                        </td>
-                        <td class="p-2 text-gray-600" >
-                            <span>01/12/2024</span>
-                        </td>
-                        <td data-controller="kt-popover" class="text-end p-4 pe-5">
-                           <!-- NO Actions Available for Paid Payouts -->
+                           <div class="d-flex align-items-center justify-content-end gap-4" >
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.5 16.05H8.49994C6.49823 16.0479 4.5791 15.2518 3.16367 13.8363C1.74824 12.4209 0.952119 10.5018 0.95 8.50006V8.5C0.95 7.00675 1.3928 5.54704 2.2224 4.30545C3.05201 3.06386 4.23116 2.09615 5.61074 1.52471C6.99032 0.953271 8.50837 0.803756 9.97293 1.09507C11.4375 1.38639 12.7828 2.10546 13.8387 3.16135C14.8945 4.21723 15.6136 5.56251 15.9049 7.02707C16.1962 8.49163 16.0467 10.0097 15.4753 11.3893C14.9038 12.7688 13.9361 13.948 12.6946 14.7776C11.453 15.6072 9.99325 16.05 8.5 16.05ZM12.3378 2.75635C11.2018 1.99731 9.86624 1.59217 8.5 1.59217C6.66857 1.59428 4.91276 2.32274 3.61775 3.61775C2.32272 4.91278 1.59426 6.66861 1.59217 8.50006C1.59218 9.86628 1.99732 11.2018 2.75635 12.3378C3.51539 13.4738 4.59424 14.3592 5.85649 14.882C7.11873 15.4048 8.50766 15.5416 9.84765 15.2751C11.1876 15.0086 12.4185 14.3507 13.3846 13.3846C14.3506 12.4185 15.0086 11.1876 15.2751 9.84765C15.5416 8.50767 15.4048 7.11873 14.882 5.85649C14.3592 4.59425 13.4738 3.51539 12.3378 2.75635Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                    <path d="M7.12806 4.89442V4.89439C7.12787 4.63724 7.20863 4.38608 7.35972 4.17269C7.51078 3.95935 7.72526 3.79345 7.97571 3.69554C8.22614 3.59763 8.50161 3.57196 8.76737 3.62167C9.03313 3.67139 9.27767 3.79433 9.46989 3.97538C9.66215 4.15645 9.79348 4.38757 9.84676 4.63967C9.90004 4.8918 9.87276 5.15312 9.7685 5.39045C9.66427 5.62773 9.48792 5.83007 9.26224 5.97221C9.03659 6.11434 8.77157 6.19004 8.50069 6.19004H8.50066C8.13778 6.18981 7.78927 6.05394 7.53175 5.81139C7.27412 5.56875 7.12855 5.23904 7.12806 4.89442ZM8.55069 4.3315V4.33202L8.50075 4.33208C8.34128 4.33228 8.1889 4.39195 8.07674 4.49722C7.96472 4.60236 7.90194 4.74432 7.90104 4.89197C7.90107 5.00244 7.93583 5.11069 8.00131 5.20306C8.06686 5.29551 8.16034 5.36799 8.27026 5.41091C8.3802 5.45382 8.50133 5.46509 8.61822 5.44318C8.7351 5.42127 8.84208 5.36725 8.92577 5.28837C9.00943 5.20952 9.06604 5.10943 9.08894 5.00094C9.11183 4.89247 9.10011 4.78001 9.05511 4.67763C9.0101 4.57521 8.93365 4.48718 8.83497 4.42504C8.75012 4.3716 8.65224 4.33947 8.55069 4.3315ZM9.48773 13.4029H7.51365C7.41207 13.4029 7.3141 13.3649 7.24142 13.2964C7.16865 13.2278 7.12716 13.1341 7.12716 13.0357V7.24704C7.12716 7.14868 7.16865 7.055 7.24142 6.98641C7.3141 6.91791 7.41207 6.87991 7.51365 6.87991H9.48773C9.58931 6.87991 9.68728 6.91791 9.75996 6.98641C9.83273 7.055 9.87422 7.14868 9.87422 7.24704V13.0357C9.87422 13.1341 9.83273 13.2278 9.75996 13.2964C9.68728 13.3649 9.58931 13.4029 9.48773 13.4029ZM7.90014 7.61417V12.6686H9.09945L9.10033 7.61417H7.90014Z" fill="#1C3A6A" stroke="#1C3A6A" stroke-width="0.1"/>
+                                </svg>
+                                <img src="./assets/csv-download.svg" alt="csv-download">                                
+                                <img src="./assets/xlsx-download.svg" alt="xlsx-download">                                
+                           </div>
                         </td>
                     </tr>
                 </tbody>
