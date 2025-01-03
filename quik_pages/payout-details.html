@@ -102,7 +102,7 @@
                         </div>
                         <div class="d-flex align-items-center gap-2" >
                             <div class="bg-light-primary text-primary fw-bold px-2 py-1 border border-primary rounded-1 fs-6" >Lek</div>
-                            <h1 class="fw-bold fs-2hx" >1000</h1>
+                            <h1 class="fw-bold fs-2hx mb-0" >1000</h1>
                         </div>
                    </div>
                     <div class="d-flex flex-column flex-lg-row gap-7 mt-8 border border-gray-200 rounded-3 px-5 py-3 px-lg-7" >
@@ -156,9 +156,17 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-10 mx-5 mx-lg-0 d-flex flex-column flex-lg-row align-lg-items-center justify-content-between gap-3 gap-lg-0" >
+            <div class="mt-10 mx-5 mx-lg-0 d-none d-lg-flex flex-column flex-lg-row align-lg-items-center justify-content-between gap-3 gap-lg-0" >
                 <h1 class="text-secondary fw-bold my-1 fs-2">Transactions</h1>
-                <div class="bg-primary text-white rounded-2 border border-primary w-100 px-4 py-3 d-flex align-items-center justify-content-between" >
+                <div class="bg-primary text-white rounded-2 border border-primary px-4 py-3 d-flex align-items-center gap-4" >
+                    <div class="fw-bold" >Transactions Count</div>
+                    <div class="w-1px h-20px bg-white" ></div>
+                    <div class="fw-bold fs-5" >5</div>
+                </div>
+            </div>
+            <div class="mt-5 mx-5 d-lg-none" >
+                <h1 class="text-secondary fw-bold my-1 fs-2">Transactions</h1>
+                <div class="mt-5 w-100 bg-primary text-white rounded-2 border border-primary px-4 py-3 d-flex align-items-center justify-content-between" >
                     <div class="fw-bold" >Transactions Count</div>
                     <div class="d-flex align-items-center gap-4" >
                         <div class="w-1px h-20px bg-white" ></div>
@@ -171,26 +179,26 @@
                     <table class="table align-middle table-hover table-row-dashed fs-6 gy-5 dataTable no-footer" >
                         <thead>
                             <tr id="order_headers" class="text-start text-gray-500 bg-gray-200 fw-bold fs-7 text-uppercase gs-0">
-                                <th class="min-w-200px min-w-lg-100px p-3">
-                                Order Number
+                                <th class="min-w-200px min-w-lg-100px px-3 py-3">
+                                    Order Number
                                 </th>
-                                <th class="min-w-175px p-3">
+                                <th class="min-w-175px px-2 py-3">
                                 Transaction Number
                                 </th>
-                                <th class="min-w-175px p-3">
+                                <th class="min-w-175px px-2 py-3">
                                 Transaction Date
                                 </th>
-                                <th class="min-w-100px p-3">
+                                <th class="min-w-100px px-2 py-3">
                                 Amount
                                 </th>
-                                <th class="min-w-175px p-3">
+                                <th class="min-w-175px px-2 py-3">
                                     Payout Available
                                 </th>
-                                <th class="min-w-100px p-3">Status</th>
-                                <th class="min-w-125px p-3">
+                                <th class="min-w-100px px-2 py-3">Status</th>
+                                <th class="min-w-125px px-2 py-3">
                                 Source
                                 </th>
-                                <th class="min-w-100px p-3">Type</th>
+                                <th class="min-w-100px px-2 py-3">Type</th>
                             </tr>
                         </thead>
                         <tbody>
