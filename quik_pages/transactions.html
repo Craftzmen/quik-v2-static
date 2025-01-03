@@ -98,14 +98,12 @@
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </i>
-                    <input type="text" placeholder="Search by order number or transaction number" class="form-control form-control-solid bg-white" >
+                    <input type="text" placeholder="Search by order number or transaction number" class="form-control form-control-solid border-0 bg-white" >
                 </div>
-                <div class="d-none bg-primary text-white rounded-2 border border-primary w-250px px-4 py-3 d-lg-flex align-items-center justify-content-between" >
+                <div class="d-none bg-primary text-white rounded-2 border border-primary px-4 py-3 d-lg-flex align-items-center gap-4" >
                     <div class="fw-bold" >Transactions Available</div>
-                    <div class="d-flex align-items-center gap-4" >
-                        <div class="w-1px h-20px bg-white" ></div>
-                        <div class="fw-bold fs-5" >12</div>
-                    </div>
+                    <div class="w-1px h-20px bg-white" ></div>
+                    <div class="fw-bold fs-5" >12</div>
                 </div>
             </div>
         </div>
@@ -120,7 +118,7 @@
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                 </svg>
                             </span>
-                            <input class="form-control form-control-sm form-control-outlined bg-transparent ps-14 pe-5 py-3 py-lg-3 rounded-1 w-lg-300px" placeholder="Search by number" data-controller="search" data-js-event="reset-range-filter" data-action="reset-search-filter@window->search#reset reset-range-filter@window->date-range-filter#reset reset-range-filter@window->order-filter#reset reset-range-filter@window->order-flatpickr#clear input->search#getSearchResults" data-kt-ecommerce-order-filter="search" data-order-filter-target="numberOrNameCont" type="search" name="q[number_or_user_first_name_or_user_last_name_cont]" id="q_number_or_user_first_name_or_user_last_name_cont">
+                            <input class="form-control form-control-sm form-control-outlined ps-14 pe-5 py-3 py-lg-3 rounded-1 w-lg-300px" placeholder="Search by order number or transaction number" data-controller="search" data-js-event="reset-range-filter" data-action="reset-search-filter@window->search#reset reset-range-filter@window->date-range-filter#reset reset-range-filter@window->order-filter#reset reset-range-filter@window->order-flatpickr#clear input->search#getSearchResults" data-kt-ecommerce-order-filter="search" data-order-filter-target="numberOrNameCont" type="search" name="q[number_or_user_first_name_or_user_last_name_cont]" id="q_number_or_user_first_name_or_user_last_name_cont">
                         </div>
                     </div>
                     <input value="2024-09-17" id="order_created_at_start" class="form-control input-sm" datepicker="true" data-controller="search" data-action="input->search#getSearchResults reset-range-filter@window->date-range-filter#reset" data-order-flatpickr-target="startAt" data-order-filter-target="createdAtGteq" data-date-range-filter-target="createdAtGteq" data-js-event="reset-search-filter" autocomplete="off" type="hidden" name="q[created_at_gteq]">
@@ -167,20 +165,20 @@
                         <div class="d-flex align-items-center gap-2" >
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
-                                </div>
+                                    <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                                  </div>
                                 <label class="pl-1 fw-semibold text-gray-700" for="columns_">Cash</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
-                                </div>
+                                    <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                                  </div>
                                 <label class="pl-1 fw-semibold text-gray-700" for="columns_">Misc Fee</label>
                             </div>
                             <div class="d-flex align-items-center p-2">
                                 <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                    <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
-                                </div>
+                                    <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                                  </div>
                                 <label class="pl-1 fw-semibold text-gray-700" for="columns_">Card</label>
                             </div>
                         </div>
@@ -340,20 +338,20 @@
                                 <input value="" data-order-filter-target="prefFilterRecentEventEq" autocomplete="off" type="hidden" name="user[recent_event_eq]" id="user_recent_event_eq">
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
-                                    </div>
+                                        <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                                      </div>
                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">Cash</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
-                                    </div>
+                                        <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                                      </div>
                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">Misc Fee</label>
                                 </div>
                                 <div class="d-flex align-items-center p-2">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input type="radio" name="columns[]" id="columns_" value="box_weight" class="form-check-input" data_kt_check="true" data_kt_check_target="column" data-action="click->preferences#submitForm click->preferences#updateMainCheckbox" data-preferences-target="preferenceCheckbox">
-                                    </div>
+                                        <input class="form-check-input" type="checkbox" value="2520083" data-checkbox-type="single" data-order-checkbox-target="orderCheckbox" data-action="change->order-checkbox#selectColumns">
+                                      </div>
                                     <label class="pl-1 fw-semibold text-gray-700" for="columns_">Card</label>
                                 </div>
                            </form>
@@ -452,28 +450,28 @@
             <table class="table align-middle table-hover table-row-dashed fs-6 gy-5 dataTable no-footer" >
                 <thead>
                     <tr id="order_headers" class="text-start text-gray-500 bg-gray-200 fw-bold fs-7 text-uppercase gs-0">
-                        <th class="w-30px p-3">
+                        <th class="w-30px px-2 py-3">
                         </th>
-                        <th class="min-w-200px min-w-lg-100px p-3">
+                        <th class="min-w-200px min-w-lg-100px px-2 py-3">
                           Order Number
                         </th>
-                        <th class="min-w-175px p-3">
+                        <th class="min-w-175px px-2 py-3">
                           Transaction Number
                         </th>
-                        <th class="min-w-175px p-3">
+                        <th class="min-w-175px px-2 py-3">
                           Transaction Date
                         </th>
-                        <th class="min-w-100px p-3">
+                        <th class="min-w-100px px-2 py-3">
                           Amount
                         </th>
-                        <th class="min-w-175px p-3">
+                        <th class="min-w-175px px-2 py-3">
                             Payout Available
                         </th>
-                        <th class="min-w-100px p-3">Status</th>
-                        <th class="min-w-125px p-3">
+                        <th class="min-w-100px px-2 py-3">Status</th>
+                        <th class="min-w-125px px-2 py-3">
                           Source
                         </th>
-                        <th class="min-w-100px p-3">Type</th>
+                        <th class="min-w-100px px-2 py-3">Type</th>
                         <th class="min-w-70px text-end p-3 pe-5">Actions</th>
                      </tr>
                 </thead>
